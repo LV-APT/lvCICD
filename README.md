@@ -11,3 +11,6 @@
 1. vipb Path :Path
 2. (option) Install? :YES/NO
 3. (option) CopyDestPath:Path
+
+### StartVITester
+1. ProjectPath :Path

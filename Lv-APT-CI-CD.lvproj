@@ -14,8 +14,9 @@
 		<Item Name="Scripts" Type="Folder" URL="../Scripts">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="git_switch_and_sync_main_branch_of_all_repos.ps1" Type="Document" URL="../git_switch_and_sync_main_branch_of_all_repos.ps1"/>
-		<Item Name="__TEST-Launcher.vi" Type="VI" URL="../__TEST-Launcher.vi"/>
+		<Item Name="_backup" Type="Folder" URL="../_backup">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="lvapt-CICD.vi" Type="VI" URL="../lvapt-CICD.vi"/>
 		<Item Name="README.md" Type="Document" URL="../README.md"/>
 		<Item Name="Dependencies" Type="Dependencies">
