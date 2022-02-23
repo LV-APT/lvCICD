@@ -1,3 +1,5 @@
 SyncAllReposToLatest
 TriggerBuild
 ListAllReposBranches
+ListAllBuildSpecs
+vipm_BuildDailyVIP
