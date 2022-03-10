@@ -1,0 +1,50 @@
+name: Test Build Envrionment
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  lvaptCICD: LabVIEWCLI -OperationName RunVI -VIPath "C:\ProgramData\lvAPT\Lv-APT-CI-CD\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe"
+  lvaptInstallerPath: C:\ProgramData\lvAPT
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: [self-hosted]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # - uses: actions/checkout@v2
+
+      - name: Print Inputs
+        run:
+          echo ${{ github.event.inputs.Sync_allRepos }}1
+          echo ${{ github.event.inputs.build_userlib }}1
+          echo ${{ github.event.inputs.compile_lvlibps }}1
+          echo ${{ github.event.inputs.compile_lvlibps }}1
+          echo ${{ github.event.inputs.build_vilib }}1
+        
+      - name: Print Inputs2
+        if: env.flag_TEST
+        run:
+          echo ${{ github.event.inputs.Sync_allRepos }}2
+          echo ${{ github.event.inputs.build_userlib }}2
+          echo ${{ github.event.inputs.compile_lvlibps }}2
+          echo ${{ github.event.inputs.compile_lvlibps }}2
+          echo ${{ github.event.inputs.build_vilib }}2
+
+      - name: Print Path
+        run:
+          echo ${{env.lvaptInstallerPath}}
+          echo %temp%
