@@ -47,4 +47,4 @@ jobs:
       - name: Print Path
         run:
           echo ${{env.lvaptInstallerPath}}
-          echo %temp%
+          echo %TEMP%
