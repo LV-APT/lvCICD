@@ -14,3 +14,8 @@
 
 ### StartVITester
 1. ProjectPath :Path
+
+### lvBuild
+1. LabVIEW Project File Path
+2. (option) name of Build Specification [Empty to build all]
+3. (option) Name of Target [My Computer]
