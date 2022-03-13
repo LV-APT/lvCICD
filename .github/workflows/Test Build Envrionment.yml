@@ -30,7 +30,7 @@ jobs:
       - name: Get VI Server Port
         id: ViServer
         run: 
-          echo ${{ GITHUB_WORKSPACE }}                  
+          echo ${{ github.workspace }}          
 
       - name: Print Inputs
         run:
