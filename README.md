@@ -38,3 +38,8 @@
     1. LabVIEW Project File Path
     2. (option) name of Build Specification [Empty to build all]
     3. (option) Name of Target [My Computer]
+    
+
+### lvEcho
+    Parameter:
+    1. All Parameters will be echoed to output.
