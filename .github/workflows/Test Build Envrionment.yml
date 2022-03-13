@@ -29,8 +29,8 @@ jobs:
       
       - name: Get VI Server Port
         id: ViServer
-        run: 
-          echo ${{ github.workspace }}          
+        run: ${{ github.workspace }}\ViServerPort.ps1
+        shell: pwsh 
 
       - name: Print Inputs
         run:
