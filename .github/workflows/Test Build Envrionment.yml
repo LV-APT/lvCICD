@@ -34,7 +34,8 @@ jobs:
 
       - name: Check Value
         run: 
-          echo ${{ env.lvaptCICD }}          
+          echo ${{ env.lvaptCICD }}
+          echo ${{join(steps.ViServer.outputs.*, '\n')}}
           echo temp=%TEMP%
 
       - name: Print Inputs
