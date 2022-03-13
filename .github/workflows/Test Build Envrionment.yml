@@ -12,8 +12,6 @@ on:
 
 env:
   lvaptCICD: LabVIEWCLI -OperationName RunVI -VIPath "C:\ProgramData\lvAPT\Lv-APT-CI-CD\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe"
-  lvaptInstallerPath: C:\ProgramData\lvAPT
-
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,14 +22,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # - uses: actions/checkout@v2
+      - name: Clone repo
+        uses: actions/checkout@v2
       
       - name: Get VI Server Port
         id: ViServer
-        run: echo ${{ GITHUB_WORKSPACE }}
-          
-        
+        run: 
+          echo ${{ GITHUB_WORKSPACE }}                  
 
       - name: Print Inputs
         run:
