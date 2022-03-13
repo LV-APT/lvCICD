@@ -11,7 +11,8 @@ on:
   workflow_dispatch:
 
 env:
-  lvaptCICD: LabVIEWCLI -OperationName RunVI -VIPath "C:\ProgramData\lvAPT\Lv-APT-CI-CD\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe"
+  ViServerPort: -1
+  lvaptCICD: LabVIEWCLI -OperationName RunVI -VIPath "C:\ProgramData\lvAPT\Lv-APT-CI-CD\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe" -PortNumber ${{ViServerPort}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,6 +32,11 @@ jobs:
         id: ViServer
         run: ${{ github.workspace }}/ViServerPort.ps1
 
+      - name: Check Value
+        run: 
+          echo ${{ env.lvaptCICD }}          
+          echo temp=%TEMP%
+
       - name: Print Inputs
         run:
           echo ${{ github.event.inputs.Sync_allRepos }}1
@@ -48,7 +54,4 @@ jobs:
           echo ${{ github.event.inputs.compile_lvlibps }}2
           echo ${{ github.event.inputs.build_vilib }}2
 
-      - name: Print Path
-        run:
-          echo ${{env.lvaptInstallerPath}}
-          echo %TEMP%
+
