@@ -61,3 +61,4 @@ else{
 	$portNum=3363
 }
 echo $portNum
+echo "::set-output name=portNum::$portNum"
