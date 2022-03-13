@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 env:
-  ViServerPort: -1
+  ViServerPort: 0
   lvaptCICD: LabVIEWCLI -OperationName RunVI -VIPath "C:\ProgramData\lvAPT\Lv-APT-CI-CD\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe" -PortNumber ${{ViServerPort}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
