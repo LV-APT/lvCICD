@@ -9,7 +9,23 @@
 ![image](https://user-images.githubusercontent.com/8196752/157785697-9444d467-aa67-4909-93f2-7af88a48534f.png)
 
 
+## Dependence
+
+1. OpenG Libraries
+2. Hampel Software Engineering/GitAPI Libraries
+3. JKI/VIPM API
+4. JKI/VITester Library
+
 ## Command List
+
+### lvEcho
+    Parameter:
+    1. All Parameters will be echoed to output.
+### lvBuild
+    Parameter:
+    1. LabVIEW Project File Path
+    2. (option) name of Build Specification [Empty to build all]
+    3. (option) Name of Target [My Computer]
 ### SyncAllReposToLatest
     Parameter:
     1. (option) SearchingFolder :Path, Empty to use <lvapt.installer>
@@ -32,14 +48,3 @@
 ### StartVITester
     Parameter:
     1. ProjectPath :Path
-
-### lvBuild
-    Parameter:
-    1. LabVIEW Project File Path
-    2. (option) name of Build Specification [Empty to build all]
-    3. (option) Name of Target [My Computer]
-    
-
-### lvEcho
-    Parameter:
-    1. All Parameters will be echoed to output.
