@@ -41,6 +41,7 @@ jobs:
   TestEnvironment:
     # The type of runner that the job will run on
     runs-on: [self-hosted]
+    needs: lvCICD
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:    
