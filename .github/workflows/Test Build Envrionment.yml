@@ -37,15 +37,19 @@ jobs:
           echo ${{ env.lvaptCICD }}
           echo ${{ steps.ViServer.outputs.portNum}}
           echo temp=%TEMP%
+          
+      - name: LabVIEW Environment
+        run:
+          ${{ env.lvaptCICD }} -PortNumber ${{ steps.ViServer.outputs.portNum}} lvEcho "line1" "line2" "line3"
 
-  TestEnvironment:
+  DoSth:
     # The type of runner that the job will run on
     runs-on: [self-hosted]
     needs: lvCICD
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:    
-      - name: LabVIEW Environment
+      - name: doSth
         run:
-          ${{ env.lvaptCICD }} -PortNumber ${{ steps.ViServer.outputs.portNum}} lvEcho "line1" "line2" "line3"
+          echo doSth
   
