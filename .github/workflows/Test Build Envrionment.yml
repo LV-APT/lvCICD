@@ -52,6 +52,5 @@ jobs:
     steps:
       - name: EchoResults
         run:
-          echo env.lvaptCICD = ${{ env.lvaptCICD }}
-          echo needs.lvCICD.outputs.portNum = ${{ needs.lvCICD.outputs.portNum }}
-
+          echo ${{ env.lvaptCICD }}
+          echo ${{ needs.lvCICD.outputs.portNum }}
