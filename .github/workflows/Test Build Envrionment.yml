@@ -33,7 +33,10 @@ jobs:
 
       - name: GetVIPortNum
         id: ViServer
-        run: $result = &".\ViServerPort.ps1" | select -Last 1
+        run:
+        $result = &".\ViServerPort.ps1" | select -Last 1
+        echo $result
+        echo "::set-output name=portNum::$result"
 
       - name: BuildCommands
         run:
