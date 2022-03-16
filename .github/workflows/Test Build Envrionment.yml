@@ -13,7 +13,6 @@ on:
 
 env:
   lvaptCICD: LabVIEWCLI -OperationName RunVI -VIPath "${{ github.workspace }}\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe"
-  test
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
