@@ -34,17 +34,17 @@ jobs:
       # - name: abc
       #   run: "${{ github.workspace }}/ViServerPort.ps1" lvEcho "line1" "line2" "line3"
 
-      - name: GetVIPortNum
-        id: ViServer
-        run:
-        $result = &".\ViServerPort.ps1" | select -Last 1
-        echo $result
-        echo "::set-output name=portNum::$result"
+#      - name: GetVIPortNum
+#        id: ViServer
+#        run:
+#        $result = &".\ViServerPort.ps1" | select -Last 1
+#        echo $result
+#       echo "::set-output name=portNum::$result"
 
-      - name: BuildCommands
-        run:
-          echo ${{ steps.ViServer.outputs.portNum }}
-          # echo "test=abc" >> $env:GITHUB_ENV
+#      - name: BuildCommands
+#        run:
+#          echo ${{ steps.ViServer.outputs.portNum }}
+#          # echo "test=abc" >> $env:GITHUB_ENV
 
       # - name: TestCommands
       #   run:
