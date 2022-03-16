@@ -31,6 +31,10 @@ jobs:
       - name: CloneRepo
         uses: actions/checkout@v2
 
+      - name: TestEnvironment
+        run:
+          &".\ViServerPort.ps1" lvEcho "line1" "line2" "line3"
+
       - name: GetVIPortNum
         id: ViServer
         run:
@@ -62,3 +66,4 @@ jobs:
         run:
           echo ${{ env.lvaptCICD }}
           echo ${{ needs.lvCICD.outputs.portNum }}
+
