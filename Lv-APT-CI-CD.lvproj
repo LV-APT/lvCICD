@@ -17,6 +17,9 @@
 		<Item Name="_backup" Type="Folder" URL="../_backup">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name=".github" Type="Folder" URL="../.github">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="lvapt-CICD.vi" Type="VI" URL="../lvapt-CICD.vi"/>
 		<Item Name="README.md" Type="Document" URL="../README.md"/>
 		<Item Name="ViServerPort.ps1" Type="Document" URL="../ViServerPort.ps1"/>
