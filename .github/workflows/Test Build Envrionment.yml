@@ -23,7 +23,7 @@ jobs:
     runs-on: [self-hosted]
     
     outputs:
-      portNum: ${{ steps.GetVIPortNum.portNum }}
+      portNum: ${{ steps.ViServer.outputs.portNum }}
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
