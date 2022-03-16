@@ -33,7 +33,7 @@ jobs:
 
       - name: GetVIPortNum
         id: ViServer
-        run: &".\ViServerPort.ps1" | Write-Output "::set-output name=portNum::*"
+        run: & ".\ViServerPort.ps1" # | Write-Output "::set-output name=portNum::*"
 
       - name: BuildCommands
         run:
