@@ -60,4 +60,5 @@ if($fileContent["LabVIEW"]["server.tcp.port"])
 else{
 	$portNum=3363
 }
-return $portNum
+
+LabVIEWCLI -OperationName RunVI -VIPath ".\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe" -PortNumber $portNum $args[0] $args[1] $args[2] $args[3] $args[4]
