@@ -33,7 +33,8 @@ jobs:
 
       - name: GetVIPortNum
         id: ViServer
-        run: ${{ github.workspace }}/ViServerPort.ps1 | Write-Output "::set-output name=portNum::*"
+        run: echo ${{ github.workspace }}/ViServerPort.ps1
+        # | Write-Output "::set-output name=portNum::*"
 
       - name: BuildCommands
         run:
