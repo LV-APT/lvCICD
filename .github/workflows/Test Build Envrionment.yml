@@ -33,7 +33,6 @@ jobs:
 
       - name: GetVIPortNum
         id: ViServer
-        working
         run:
           working-directory: ${{ github.workspace }}
           &".\ViServerPort.ps1" | Write-Output "::set-output name=portNum::*"
