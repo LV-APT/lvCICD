@@ -33,11 +33,13 @@ jobs:
 
       - name: GetVIPortNum
         id: ViServer
-        run: ${{ github.workspace }}/ViServerPort.ps1
+        run:
+          ${{ github.workspace }}/ViServerPort.ps1 | echo "::set-output name=portNum::*"
 
       - name: BuildCommands
         run:
           echo ${{ steps.ViServer.outputs.portNum }}
+          # https://stackoverflow.com/questions/57968497/how-do-i-set-an-env-var-with-a-bash-expression-in-github-actions#:~:text=Setting%20an%20environment%20variable%20echo%20%22%7Bname%7D%3D%7Bvalue%7D%22%20%3E%3E%20%24GITHUB_ENV,subsequent%20actions%20in%20a%20job%20will%20have%20access.
           echo "test=abc" >> $env:GITHUB_ENV
 
       - name: TestCommands
