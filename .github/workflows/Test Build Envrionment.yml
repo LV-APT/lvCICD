@@ -38,7 +38,7 @@ jobs:
       - name: BuildCommands
         run:
           echo ${{ steps.ViServer.outputs.portNum }}
-          echo "test=$(abcdefg)" >> $GITHUB_ENV
+          echo "(test=abc)" >> $GITHUB_ENV
 
       - name: TestEnvironment
         run:
