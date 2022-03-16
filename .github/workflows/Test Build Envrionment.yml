@@ -21,10 +21,10 @@ jobs:
     # The type of runner that the job will run on
     name: lvCICD Preparation
     runs-on: [self-hosted]
-    
+
     outputs:
       portNum: ${{ steps.ViServer.outputs.portNum }}
-      
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -38,7 +38,7 @@ jobs:
       - name: Check Value
         run:
           echo ${{ steps.ViServer.outputs.portNum }}
-          echo "test=abcdefg" >> $GITHUB_ENV
+          echo "test=$(abcdefg)" >> $GITHUB_ENV
 
       - name: LabVIEW Environment
         run:
