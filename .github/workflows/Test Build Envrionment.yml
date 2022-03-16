@@ -38,11 +38,11 @@ jobs:
       - name: BuildCommands
         run:
           echo ${{ steps.ViServer.outputs.portNum }}
-          echo "test=abc" >> $GITHUB_ENV
+          echo "lvaptCICD=abc" >> $GITHUB_ENV
 
       - name: TestCommands
         run:
-          echo ${{ env.test }}
+          echo ${{ env.lvaptCICD }}
 
       - name: TestEnvironment
         run:
