@@ -12,8 +12,7 @@ inputs:
 runs:
   # using: "composite"
   steps:
-    - name: first
-      run: echo Hello
+    - run: echo Hello
     #  run: echo Hello ${{ inputs.who-to-greet }}
     # - id: random-number-generator
     #   run: echo "::set-output name=random-number::$(echo $RANDOM)"
