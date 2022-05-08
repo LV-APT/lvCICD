@@ -3,5 +3,5 @@ name: 'lvCICD-TEST'
 runs:
   using: "composite"
   steps:
-    - run: $GITHUB_ACTION_PATH/ViServerPort.ps1
+    - run: .\ViServerPort.ps1
       shell: powershell
