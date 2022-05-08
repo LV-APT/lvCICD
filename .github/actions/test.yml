@@ -5,17 +5,12 @@ inputs:
   #   description: 'Who to greet'
   #   required: true
   #   default: 'World'
-# outputs:
+outputs:
 #   random-number:
 #     description: "Random number"
 #     value: ${{ steps.random-number-generator.outputs.random-id }}
 runs:
-  # using: "composite"
+  using: "composite"
   steps:
-    - run: echo Hello
-    #  run: echo Hello ${{ inputs.who-to-greet }}
-    # - id: random-number-generator
-    #   run: echo "::set-output name=random-number::$(echo $RANDOM)"
-    #   shell: bash
-    # - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-    #   shell: bash
+    - run: $GITHUB_ACTION_PATH/ViServerPort.ps1
+      shell: powershell
