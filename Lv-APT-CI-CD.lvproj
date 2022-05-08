@@ -20,21 +20,15 @@
 		<Item Name=".github" Type="Folder" URL="../.github">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="_support" Type="Folder" URL="../_support">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="lvapt-CICD.vi" Type="VI" URL="../lvapt-CICD.vi"/>
 		<Item Name="README.md" Type="Document" URL="../README.md"/>
 		<Item Name="ViServerPort.ps1" Type="Document" URL="../ViServerPort.ps1"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="1D Array to String__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/1D Array to String__ogtk.vi"/>
-				<Item Name="Append Path to Root if Relative - Absolute or Relative Path Array__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Append Path to Root if Relative - Absolute or Relative Path Array__ogtk.vi"/>
-				<Item Name="Append Path to Root if Relative - Array__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Append Path to Root if Relative - Array__ogtk.vi"/>
-				<Item Name="Append Path to Root if Relative - Root Path Array__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Append Path to Root if Relative - Root Path Array__ogtk.vi"/>
-				<Item Name="Append Path to Root if Relative - Scalar__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Append Path to Root if Relative - Scalar__ogtk.vi"/>
-				<Item Name="Append Path to Root if Relative__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Append Path to Root if Relative__ogtk.vi"/>
-				<Item Name="Autosize All Columns (Uniform Text)_nevstop.vi" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Dialog &amp; Interface/Autosize All Columns (Uniform Text)_nevstop.vi"/>
-				<Item Name="Autosize All MultiListbox Columns (Uniform Text)_nevstop.vi" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Dialog &amp; Interface/_support/Autosize All MultiListbox Columns (Uniform Text)_nevstop.vi"/>
-				<Item Name="Autosize All Table Columns (Uniform Text)_nevstop.vi" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Dialog &amp; Interface/_support/Autosize All Table Columns (Uniform Text)_nevstop.vi"/>
-				<Item Name="Autosize All Tree Columns (Uniform Text)_nevstop.vi" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Dialog &amp; Interface/_support/Autosize All Tree Columns (Uniform Text)_nevstop.vi"/>
 				<Item Name="Build Error Cluster__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/error/error.llb/Build Error Cluster__ogtk.vi"/>
 				<Item Name="Build Path - File Names and Paths Arrays - path__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Build Path - File Names and Paths Arrays - path__ogtk.vi"/>
 				<Item Name="Build Path - File Names and Paths Arrays__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Build Path - File Names and Paths Arrays__ogtk.vi"/>
@@ -43,10 +37,8 @@
 				<Item Name="Build Path - Traditional - path__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Build Path - Traditional - path__ogtk.vi"/>
 				<Item Name="Build Path - Traditional__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Build Path - Traditional__ogtk.vi"/>
 				<Item Name="Build Path__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Build Path__ogtk.vi"/>
-				<Item Name="Create Dir if Non-Existant__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/Create Dir if Non-Existant__ogtk.vi"/>
 				<Item Name="Current VIs Parents Ref__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/Current VIs Parents Ref__ogtk.vi"/>
 				<Item Name="End of Line Constant (bug fix).vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/End of Line Constant (bug fix).vi"/>
-				<Item Name="Get System Environment Variable_nevstop.vi" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Application/SysEnvVar/Get System Environment Variable_nevstop.vi"/>
 				<Item Name="Index 1D Array Elements (Boolean)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Index 1D Array Elements (Boolean)__ogtk.vi"/>
 				<Item Name="Index 1D Array Elements (CDB)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Index 1D Array Elements (CDB)__ogtk.vi"/>
 				<Item Name="Index 1D Array Elements (CSG)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Index 1D Array Elements (CSG)__ogtk.vi"/>
@@ -86,26 +78,14 @@
 				<Item Name="Index 2D Array Elements (U64)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Index 2D Array Elements (U64)__ogtk.vi"/>
 				<Item Name="Index 2D Array Elements (Variant)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Index 2D Array Elements (Variant)__ogtk.vi"/>
 				<Item Name="Index Array Elements__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Index Array Elements__ogtk.vi"/>
-				<Item Name="lvapt - BatchProcessWindow.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - BatchProcessWindow.vi"/>
 				<Item Name="lvapt - BuildSystemCore.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvAPTSystemCore/lvapt - BuildSystemCore.vi"/>
-				<Item Name="lvapt - Check if Proper File or Folder Exists.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - Check if Proper File or Folder Exists.vi"/>
-				<Item Name="lvapt - Close Caller FP if In LabVIEW folder.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - Close Caller FP if In LabVIEW folder.vi"/>
-				<Item Name="lvapt - CONST-CURRENTWORKSPACE.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - CONST-CURRENTWORKSPACE.vi"/>
-				<Item Name="lvapt - CONST-INSTALLED PATH.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - CONST-INSTALLED PATH.vi"/>
-				<Item Name="lvapt - CONST-SysEnvVarDefinition.ctl" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - CONST-SysEnvVarDefinition.ctl"/>
-				<Item Name="lvapt - CONST-USER LIBRARY.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - CONST-USER LIBRARY.vi"/>
-				<Item Name="lvapt - CONST-VI LIBRARY.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - CONST-VI LIBRARY.vi"/>
-				<Item Name="lvapt - Extend Symbol Path.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - Extend Symbol Path.vi"/>
 				<Item Name="lvapt - GitRepo Force Sync to Latest.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvAPTSystemCore/lvapt - GitRepo Force Sync to Latest.vi"/>
 				<Item Name="lvapt - GitRepo Show Current Branch.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvAPTSystemCore/lvapt - GitRepo Show Current Branch.vi"/>
 				<Item Name="lvapt - List Git Repo Folders.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/GitVIs/lvapt - List Git Repo Folders.vi"/>
 				<Item Name="lvapt - List Project Files with Specified Pattern.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - List Project Files with Specified Pattern.vi"/>
-				<Item Name="Path Type -- Enum_nevstop.vi" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/File/Path Type -- Enum_nevstop.vi"/>
 				<Item Name="Reorder 1D Array (CDB)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Reorder 1D Array (CDB)__ogtk.vi"/>
 				<Item Name="Reorder 1D Array (CSG)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Reorder 1D Array (CSG)__ogtk.vi"/>
 				<Item Name="Reorder 1D Array (CXT)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Reorder 1D Array (CXT)__ogtk.vi"/>
-				<Item Name="Safely Close Reference_nevstop.vim" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Application/Safely Close Reference_nevstop.vim"/>
-				<Item Name="Select Greater_nevstop.vim" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Comparison/Select Greater_nevstop.vim"/>
 				<Item Name="Sort 1D Array (CDB)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Sort 1D Array (CDB)__ogtk.vi"/>
 				<Item Name="Sort 1D Array (CSG)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Sort 1D Array (CSG)__ogtk.vi"/>
 				<Item Name="Sort 1D Array (CXT)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Sort 1D Array (CXT)__ogtk.vi"/>
@@ -157,7 +137,6 @@
 				<Item Name="File Exists - Scalar__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/File Exists - Scalar__ogtk.vi"/>
 				<Item Name="File Exists - Array__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/File Exists - Array__ogtk.vi"/>
 				<Item Name="File Exists__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/File Exists__ogtk.vi"/>
-				<Item Name="Extend Symbol Path_nevstop.vi" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/String/Extend Symbol Path_nevstop.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="_TextTestResult.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/VI Tester/_TextTestResult.llb/_TextTestResult.lvclass"/>
