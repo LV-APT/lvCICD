@@ -78,11 +78,6 @@
 				<Item Name="Index 2D Array Elements (U64)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Index 2D Array Elements (U64)__ogtk.vi"/>
 				<Item Name="Index 2D Array Elements (Variant)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Index 2D Array Elements (Variant)__ogtk.vi"/>
 				<Item Name="Index Array Elements__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Index Array Elements__ogtk.vi"/>
-				<Item Name="lvapt - BuildSystemCore.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvAPTSystemCore/lvapt - BuildSystemCore.vi"/>
-				<Item Name="lvapt - GitRepo Force Sync to Latest.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvAPTSystemCore/lvapt - GitRepo Force Sync to Latest.vi"/>
-				<Item Name="lvapt - GitRepo Show Current Branch.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvAPTSystemCore/lvapt - GitRepo Show Current Branch.vi"/>
-				<Item Name="lvapt - List Git Repo Folders.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/GitVIs/lvapt - List Git Repo Folders.vi"/>
-				<Item Name="lvapt - List Project Files with Specified Pattern.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/lvapt - List Project Files with Specified Pattern.vi"/>
 				<Item Name="Reorder 1D Array (CDB)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Reorder 1D Array (CDB)__ogtk.vi"/>
 				<Item Name="Reorder 1D Array (CSG)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Reorder 1D Array (CSG)__ogtk.vi"/>
 				<Item Name="Reorder 1D Array (CXT)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/array/array.llb/Reorder 1D Array (CXT)__ogtk.vi"/>
@@ -133,7 +128,6 @@
 				<Item Name="Trim Whitespace__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/Trim Whitespace__ogtk.vi"/>
 				<Item Name="Trim Whitespace (String)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/Trim Whitespace (String)__ogtk.vi"/>
 				<Item Name="Trim Whitespace (String Array)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/Trim Whitespace (String Array)__ogtk.vi"/>
-				<Item Name="lvapt - Build Daily VI Package_vipm_api.vi" Type="VI" URL="/&lt;userlib&gt;/_lvAPT/_support_for_vipm/vipmVIs/lvapt - Build Daily VI Package_vipm_api.vi"/>
 				<Item Name="File Exists - Scalar__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/File Exists - Scalar__ogtk.vi"/>
 				<Item Name="File Exists - Array__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/File Exists - Array__ogtk.vi"/>
 				<Item Name="File Exists__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/file/file.llb/File Exists__ogtk.vi"/>
