@@ -12,8 +12,9 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
+    - shell: bash
+      run:
+        echo Hello ${{ inputs.who-to-greet }}.
     # - id: random-number-generator
     #   run: echo "::set-output name=random-number::$(echo $RANDOM)"
     #   shell: bash
