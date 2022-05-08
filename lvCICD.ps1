@@ -44,6 +44,7 @@ function Get-IniFile
     return $ini
 }
 
+$portNum=3363
 $cfgPath = "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.ini"
 $fileContent = Get-IniFile $cfgPath
 if ($fileContent["LabVIEW"]["server.tcp.enabled"])
@@ -56,9 +57,6 @@ else{
 if($fileContent["LabVIEW"]["server.tcp.port"])
 {
 	$portNum = $fileContent["LabVIEW"]["server.tcp.port"]
-}
-else{
-	$portNum=3363
 }
 
 LabVIEWCLI -OperationName RunVI -VIPath ".\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe" -PortNumber $portNum $args[0] $args[1] $args[2] $args[3] $args[4]

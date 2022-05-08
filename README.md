@@ -11,10 +11,11 @@
 
 ## Dependence
 
-1. OpenG Libraries
-2. Hampel Software Engineering/GitAPI Libraries
-3. JKI/VIPM API
-4. JKI/VITester Library
+ - [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
+ - OpenG Libraries
+ - Hampel Software Engineering/GitAPI Libraries
+ - JKI/VIPM API
+ - JKI/VITester Library
 
 ## Command List
 
