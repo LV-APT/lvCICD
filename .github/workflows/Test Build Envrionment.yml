@@ -29,7 +29,7 @@ jobs:
     steps:
 
       - name: Test customer step
-        use: LV-APT/lvCICD-TEST@try_github_customer_action
+        uses: LV-APT/lvCICD-TEST@try_github_customer_action
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: CloneRepo
