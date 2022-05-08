@@ -12,10 +12,11 @@
 ## Dependence
 
  - [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
- - OpenG Libraries
- - Hampel Software Engineering/GitAPI Libraries
- - JKI/VIPM API
- - JKI/VITester Library
+ - VIPM Libraies
+   - [OpenG by OpenG](https://www.vipm.io/package/openg.org_lib_openg_toolkit/)
+   - [Git API by Hampel Software Engineering](https://www.vipm.io/package/hse_lib_git_api/)
+   - [VIPM API by JKI](https://www.vipm.io/package/jki_lib_vipm_api/)
+   - [JKI VI Tester by JKI](https://www.vipm.io/package/jki_labs_tool_vi_tester/)
 
 ## Command List
 
