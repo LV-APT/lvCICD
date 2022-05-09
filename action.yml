@@ -1,0 +1,53 @@
+name: 'lvCICD'
+author: 'LV-APT'
+description: 'CICD Action used for LabVIEW Users'
+branding:
+  icon: 'tool'
+  color: 'green'
+
+inputs:
+  Operation:
+    description: 'The operation of lvCICD'
+    required: false
+    default: 'lvecho'
+  Parameter1:
+    description: 'Parameter1 of lvCICD'
+    required: false
+    default: ''
+  Parameter2:
+    description: 'Parameter2 of lvCICD'
+    required: false
+    default: ''
+  Parameter3:
+    description: 'Parameter3 of lvCICD'
+    required: false
+    default: ''
+  Parameter4:
+    description: 'Parameter4 of lvCICD'
+    required: false
+    default: ''
+  Parameter5:
+    description: 'Parameter5 of lvCICD'
+    required: false
+    default: ''
+  LabVIEW_Version:
+    description: 'LabVIEW Version Used'
+    required: false
+    default: "2019"
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: "Checkout lvCICD Action"
+      uses: actions/checkout@v2.4.2
+
+    # - name: "Show working dir"
+    #   run: pwd
+    #   shell: powershell
+
+    - name: "Run Scripts"
+      run:
+        $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }};
+        LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW ${{ inputs.LabVIEW_Version }}\LabVIEW.exe" -PortNumber $PortNum ${{ inputs.Operation }} ${{ inputs.Parameter1 }} ${{ inputs.Parameter2 }} ${{ inputs.Parameter3}} ${{ inputs.Parameter4}} ${{ inputs.Parameter5}}
+      shell: powershell

@@ -1,23 +1,30 @@
-# LabVIEW CICD Scripts
+# Github Action for LabVIEW CICD(lvCICD)
 
-## 说明
+## Introduction
 
-![image](https://user-images.githubusercontent.com/8196752/157785476-ca0301bd-0ad9-42e4-9bef-575c5199a989.png)
+Use this customer-action in your github CICD description file.
 
-![image](https://user-images.githubusercontent.com/8196752/157785543-88407726-50de-4b36-ae82-544353124af5.png)
+    - name: [your_action_step_name]
+        uses: LV-APT/lvCICD@[lvcicd_version]
+        with:
+          Operation: [operation_in_list]
+          Parameter1: [1st-parameter, optional]
+          Parameter2: [2nd-parameter, optional]
+          Parameter3: [3rd-parameter, optional]
+          Parameter4: [4th-parameter, optional]
+          Parameter5: [5th-parameter, optional]
+          LabVIEW_Version: [LabVIEW_version,2019 or Later,2019 as default]
 
-![image](https://user-images.githubusercontent.com/8196752/157785697-9444d467-aa67-4909-93f2-7af88a48534f.png)
-
-
-## Dependence
+### Dependence
 
  - [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
- - OpenG Libraries
- - Hampel Software Engineering/GitAPI Libraries
- - JKI/VIPM API
- - JKI/VITester Library
+ - VIPM Libraies
+   - [OpenG by OpenG](https://www.vipm.io/package/openg.org_lib_openg_toolkit/)
+   - [Git API by Hampel Software Engineering](https://www.vipm.io/package/hse_lib_git_api/)
+   - [VIPM API by JKI](https://www.vipm.io/package/jki_lib_vipm_api/)
+   - [JKI VI Tester by JKI](https://www.vipm.io/package/jki_labs_tool_vi_tester/)
 
-## Command List
+## Operation List
 
 ### lvEcho
     Parameter:

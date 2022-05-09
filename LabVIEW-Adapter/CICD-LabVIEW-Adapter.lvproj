@@ -14,18 +14,10 @@
 		<Item Name="Scripts" Type="Folder" URL="../Scripts">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="_backup" Type="Folder" URL="../_backup">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
-		<Item Name=".github" Type="Folder" URL="../.github">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
 		<Item Name="_support" Type="Folder" URL="../_support">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="ViServerPort.ps1" Type="Document" URL="../ViServerPort.ps1"/>
-		<Item Name="lvapt-CICD.vi" Type="VI" URL="../lvapt-CICD.vi"/>
-		<Item Name="README.md" Type="Document" URL="../README.md"/>
+		<Item Name="lvCICD.vi" Type="VI" URL="../lvCICD.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="1D Array to String__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/1D Array to String__ogtk.vi"/>
