@@ -1,6 +1,9 @@
 name: 'lvCICD'
 author: 'LV-APT'
 description: 'CICD Action used for LabVIEW Users'
+branding:
+  icon: 'tool'
+  color: 'green'
 
 inputs:
   Operation:
@@ -10,9 +13,6 @@ inputs:
 
 runs:
   using: "composite"
-
-  env:
-    PortNum: 3343
 
   steps:
     - name: "Checkout lvCICD Action"
@@ -24,7 +24,3 @@ runs:
 
     - run: .\ViServerPort.ps1
       shell: powershell
-
-branding:
-  icon: 'tool'
-  color: 'green'
