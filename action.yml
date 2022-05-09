@@ -20,7 +20,7 @@ runs:
 
     - name: "Set lvCICD Script Env Variable"
       run:
-        echo "{lvCICD}={LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\lvapt-CICD.vi"}" >> $GITHUB_ENV
+        echo '{lvCICD}={LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\lvapt-CICD.vi"}' >> $GITHUB_ENV
       shell: powershell
 
     - name: "Show working dir"
