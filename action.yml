@@ -1,16 +1,30 @@
 name: 'lvCICD'
-author: 'Yao'
+author: 'LV-APT'
 description: 'CICD Action used for LabVIEW Users'
+
+inputs:
+  Operation:
+    description: 'The operation of lvCICD'
+    required: true
+    default: 'lvecho'
 
 runs:
   using: "composite"
+
+  env:
+    PortNum: 3343
 
   steps:
     - name: "Checkout lvCICD Action"
       uses: actions/checkout@v2.4.2
 
-    - run: pwd
+    - name: "Show working dir"
+      run: pwd
       shell: powershell
 
     - run: .\ViServerPort.ps1
       shell: powershell
+
+branding:
+  icon: 'tool'
+  color: 'green'
