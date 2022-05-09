@@ -33,7 +33,7 @@ inputs:
   lvCICD:
     description: 'CommandLine'
     required: false
-    default: LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\lvapt-CICD.vi"
+    default: LabVIEWCLI -OperationName RunVI -VIPath ".\lvapt-CICD.vi"
   LabVIEW_Version:
     description: 'LabVIEW Version Used'
     required: false
@@ -50,17 +50,17 @@ runs:
     - name: "Checkout lvCICD Action"
       uses: actions/checkout@v2.4.2
 
-    - name: "Set lvCICD Script Env Variable"
-      run:
-        ${{ github.action_path }}\SetGithubEnvVariable.ps1 lvCICD abcdef
-      shell: powershell
+    # - name: "Set lvCICD Script Env Variable"
+    #   run:
+    #     ${{ github.action_path }}\SetGithubEnvVariable.ps1 lvCICD abcdef
+    #   shell: powershell
 
-    - name: "Show working dir"
-      run: pwd
-      shell: powershell
+    # - name: "Show working dir"
+    #   run: pwd
+    #   shell: powershell
 
-    - run: echo "{PortNum}={${{ github.action_path }}\ViServerPort.ps1}" >> $GITHUB_ENV
-      shell: powershell
+    # - run: echo "{PortNum}={${{ github.action_path }}\ViServerPort.ps1}" >> $GITHUB_ENV
+    #   shell: powershell
 
 #  echo "{lvCICD}={LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe" -PortNumber 3364}" >> $GITHUB_ENV
     - name: "Test Environment"
