@@ -6,6 +6,25 @@ branding:
   color: 'green'
 
 inputs:
+  Operation:
+    description: 'The operation of lvCICD'
+    required: false
+    default: 'lvecho'
+  Parameter1:
+    description: 'Parameter1 of lvCICD'
+    required: false
+  Parameter2:
+    description: 'Parameter2 of lvCICD'
+    required: false
+  Parameter3:
+    description: 'Parameter3 of lvCICD'
+    required: false
+  Parameter4:
+    description: 'Parameter4 of lvCICD'
+    required: false
+  Parameter5:
+    description: 'Parameter5 of lvCICD'
+    required: false
   lvCICD:
     description: 'CommandLine'
     required: false
@@ -18,10 +37,6 @@ inputs:
     description: 'LabVIEW Version Used'
     required: false
     default: "3364"
-  Operation:
-    description: 'The operation of lvCICD'
-    required: false
-    default: 'lvecho'
 
 runs:
   using: "composite"
@@ -45,4 +60,8 @@ runs:
 #  echo "{lvCICD}={LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe" -PortNumber 3364}" >> $GITHUB_ENV
     - name: "Test Environment"
       run: ${{ inputs.lvCICD }} -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW ${{ inputs.LabVIEW_Version }}\LabVIEW.exe" -PortNumber ${{ inputs.PortNum }} lvEcho "line1" "line2" "line3"
+      shell: powershell
+
+    - name: "Run Scripts"
+      run: ${{ inputs.lvCICD }} -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW ${{ inputs.LabVIEW_Version }}\LabVIEW.exe" -PortNumber ${{ inputs.PortNum }} ${{ inputs.Operation }} ${{ inputs.Parameter1 }} ${{ inputs.Parameter2 }} ${{ inputs.Parameter3}} ${{ inputs.Parameter4}} ${{ inputs.Parameter5}}
       shell: powershell
