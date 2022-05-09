@@ -52,6 +52,6 @@ runs:
 
     - name: "Run Scripts"
       run:
-        $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }}
+        $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }};
         ${{ inputs.lvCICD }} -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW ${{ inputs.LabVIEW_Version }}\LabVIEW.exe" -PortNumber $PortNum ${{ inputs.Operation }} ${{ inputs.Parameter1 }} ${{ inputs.Parameter2 }} ${{ inputs.Parameter3}} ${{ inputs.Parameter4}} ${{ inputs.Parameter5}}
       shell: powershell
