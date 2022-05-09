@@ -6,5 +6,8 @@ runs:
   using: "composite"
 
   steps:
+    - run: pwd
+      shell: powershell
+
     - run: .\ViServerPort.ps1
       shell: powershell
