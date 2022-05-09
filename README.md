@@ -15,7 +15,6 @@ Use this customer-action in your github CICD description file.
           Parameter5: [5th-parameter, optional]
           LabVIEW_Version: [LabVIEW_version,2019 or Later,2019 as default]
 
-
 ### Dependence
 
  - [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
