@@ -56,7 +56,7 @@ runs:
     #   shell: powershell
 
     - id: get_vi_server_port_number
-      run: ::set-output name=PortNum::$((${{ github.action_path }}\ViServerPort.ps1))
+      run: ${{ github.action_path }}\ViServerPort.ps1
       shell: powershell
 
 #  echo "{lvCICD}={LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe" -PortNumber 3364}" >> $GITHUB_ENV

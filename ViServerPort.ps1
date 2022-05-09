@@ -60,4 +60,7 @@ if($fileContent["LabVIEW"]["server.tcp.port"])
 else{
 	$portNum=3363
 }
+
+echo "::set-output name=PortNum::$((${{ github.action_path }}\ViServerPort.ps1))"
+
 return $portNum
