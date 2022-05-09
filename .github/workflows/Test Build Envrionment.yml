@@ -16,7 +16,7 @@ jobs:
 
   lvCICD:
     # The type of runner that the job will run on
-    name: lvCICD Preparation
+    name: Test lvCICD
     runs-on: [self-hosted]
 
     outputs:

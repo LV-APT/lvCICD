@@ -13,18 +13,23 @@ inputs:
   Parameter1:
     description: 'Parameter1 of lvCICD'
     required: false
+    default: ''
   Parameter2:
     description: 'Parameter2 of lvCICD'
     required: false
+    default: ''
   Parameter3:
     description: 'Parameter3 of lvCICD'
     required: false
+    default: ''
   Parameter4:
     description: 'Parameter4 of lvCICD'
     required: false
+    default: ''
   Parameter5:
     description: 'Parameter5 of lvCICD'
     required: false
+    default: ''
   lvCICD:
     description: 'CommandLine'
     required: false
