@@ -27,10 +27,10 @@ runs:
       run: pwd
       shell: powershell
 
-    - run: ${{ github.action_path }}\ViServerPort.ps1
+    - run: echo "{PortNum}={${{ github.action_path }}\ViServerPort.ps1}" >> $GITHUB_ENV
       shell: powershell
 
 #  echo "{lvCICD}={LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\lvapt-CICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW 2019\LabVIEW.exe" -PortNumber 3364}" >> $GITHUB_ENV
     - name: "Test Environment"
-      run: ${{ env.lvCICD }} lvEcho "line1" "line2" "line3"
+      run: ${{ env.lvaptCICD }} lvEcho "line1" "line2" "line3"
       shell: powershell
