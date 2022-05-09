@@ -6,6 +6,9 @@ runs:
   using: "composite"
 
   steps:
+    - name: "Checkout lvCICD Action"
+      uses: actions/checkout@v2.4.2
+
     - run: pwd
       shell: powershell
 
