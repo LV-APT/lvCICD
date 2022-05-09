@@ -5,7 +5,7 @@ description: 'CICD Action used for LabVIEW Users'
 inputs:
   Operation:
     description: 'The operation of lvCICD'
-    required: true
+    required: false
     default: 'lvecho'
 
 runs:
