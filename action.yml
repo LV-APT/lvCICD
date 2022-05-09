@@ -20,7 +20,7 @@ runs:
 
     - name: "Set lvCICD Script Env Variable"
       run:
-        echo '{lvCICD}={abcdef}' >> $GITHUB_ENV
+        ${{ github.action_path }}\SetGithubEnvVariable.ps1 lvCICD abcdef
       shell: powershell
 
     - name: "Show working dir"
