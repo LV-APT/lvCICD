@@ -44,7 +44,9 @@ function Get-IniFile
     return $ini
 }
 
-$cfgPath = "C:\Program Files (x86)\National Instruments\LabVIEW $args[0]\LabVIEW.ini"
+$LabVIEW_Version = $args[0]
+
+$cfgPath = "C:\Program Files (x86)\National Instruments\LabVIEW $LabVIEW_Version\LabVIEW.ini"
 $fileContent = Get-IniFile $cfgPath
 if ($fileContent["LabVIEW"]["server.tcp.enabled"])
 {
