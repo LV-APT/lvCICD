@@ -4,7 +4,7 @@ description: 'CICD Action used for LabVIEW Users'
 
 runs:
   using: "composite"
-  shell: powershell
 
   steps:
     - run: .\ViServerPort.ps1
+      shell: powershell
