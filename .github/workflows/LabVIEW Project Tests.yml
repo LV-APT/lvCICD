@@ -28,5 +28,5 @@ jobs:
         uses: LV-APT/lvCICD@documentation_before_release
         with:
           Operation: StartVITester
-          Parameter1: ${{ GITHUB_WORKSPACE }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
+          Parameter1: $GITHUB_WORKSPACE\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
 
