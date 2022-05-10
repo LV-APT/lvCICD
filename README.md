@@ -5,15 +5,15 @@
 Use this customer-action in your github CICD description file.
 
     - name: [your_action_step_name]
-        uses: LV-APT/lvCICD@[lvcicd_version]
-        with:
-          Operation: [operation_in_list]
-          Parameter1: [1st-parameter, optional]
-          Parameter2: [2nd-parameter, optional]
-          Parameter3: [3rd-parameter, optional]
-          Parameter4: [4th-parameter, optional]
-          Parameter5: [5th-parameter, optional]
-          LabVIEW_Version: [LabVIEW_version,2019 or Later,2019 as default]
+      uses: LV-APT/lvCICD@[lvcicd_version]
+      with:
+        Operation: [operation_in_list]
+        Parameter1: [1st-parameter, optional]
+        Parameter2: [2nd-parameter, optional]
+        Parameter3: [3rd-parameter, optional]
+        Parameter4: [4th-parameter, optional]
+        Parameter5: [5th-parameter, optional]
+        LabVIEW_Version: [LabVIEW_version,2019 or Later,2019 as default]
 
 ### Dependence
 
