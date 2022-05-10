@@ -54,8 +54,8 @@ runs:
 
     - name: "Run Scripts"
       run:
-        # $ProgramFolder = (${{ inputs.Architecture }} -eq 'x86') ? 'C:\Program Files (x86)' : 'C:\Program Files'
-        $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }};
+        $LabVIEWExePath = ${{ github.action_path }}\LabVIEW_exe_path.ps1 ${{ inputs.LabVIEW_Version }} ${{ inputs.Architecture }}
+        $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }}
         LabVIEWCLI -OperationName RunVI `
           -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" `
           -LogFilePath ${{ github.action_path }}\lVCLI.log `
