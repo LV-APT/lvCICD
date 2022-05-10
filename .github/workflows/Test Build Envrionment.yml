@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v2.4.2
 
       - name: TestEnvironment
-        uses: LV-APT/lvCICD@f1d944cf96713fa0ff3a5514672a8c09ac3c35ab
+        uses: LV-APT/lvCICD@documentation_before_release
         with:
           Operation: lvEcho
           Parameter1: "line1"
