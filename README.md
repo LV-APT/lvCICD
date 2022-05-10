@@ -1,4 +1,4 @@
-# Github Action for LabVIEW CICD(lvCICD)
+# Github Action for LabVIEW CICD (lvCICD)
 
 ## Introduction
 
@@ -14,6 +14,7 @@ Use this customer-action in your github CICD description file.
         Parameter4: [4th-parameter, optional]
         Parameter5: [5th-parameter, optional]
         LabVIEW_Version: [LabVIEW_version,2019 or Later,2019 as default]
+        Architecture: x86
 
 ### Dependence
 

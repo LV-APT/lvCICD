@@ -6,6 +6,14 @@ branding:
   color: 'green'
 
 inputs:
+  LabVIEW_Version:
+      description: 'LabVIEW Version Used'
+      required: false
+      default: "2019"
+  Architecture:
+    description: '32bit/64bit Verion of LabVIEW Used'
+    required: false
+    default: "x86"
   Operation:
     description: 'The operation of lvCICD'
     required: false
@@ -30,10 +38,7 @@ inputs:
     description: 'Parameter5 of lvCICD'
     required: false
     default: ''
-  LabVIEW_Version:
-    description: 'LabVIEW Version Used'
-    required: false
-    default: "2019"
+
 
 runs:
   using: "composite"
