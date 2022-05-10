@@ -61,11 +61,13 @@ runs:
 
     - name: "Run Scripts"
       run:
+        echo $LabVIEWExePath
+        echo $PortNum
         LabVIEWCLI -OperationName RunVI `
           -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" `
           -LogFilePath ${{ github.action_path }}\lVCLI.log `
           -LogToConsole True `
-          -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW ${{ inputs.LabVIEW_Version }}\LabVIEW.exe" `
+          -LabVIEWPath $LabVIEWExePath `
           -PortNumber $PortNum `
           ${{ inputs.Operation }} `
           ${{ inputs.Parameter1 }} `
