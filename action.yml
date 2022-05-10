@@ -44,6 +44,7 @@ runs:
   using: "composite"
 
   steps:
+
     - name: "Checkout lvCICD Action"
       uses: actions/checkout@v2.4.2
 
@@ -53,6 +54,18 @@ runs:
 
     - name: "Run Scripts"
       run:
+        # $ProgramFolder = (${{ inputs.Architecture }} -eq 'x86') ? 'C:\Program Files (x86)' : 'C:\Program Files'
         $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }};
-        LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" -LogFilePath ${{ github.action_path }}\lVCLI.log -LogToConsole True -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW ${{ inputs.LabVIEW_Version }}\LabVIEW.exe" -PortNumber $PortNum ${{ inputs.Operation }} ${{ inputs.Parameter1 }} ${{ inputs.Parameter2 }} ${{ inputs.Parameter3}} ${{ inputs.Parameter4}} ${{ inputs.Parameter5}}
+        LabVIEWCLI -OperationName RunVI `
+          -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" `
+          -LogFilePath ${{ github.action_path }}\lVCLI.log `
+          -LogToConsole True `
+          -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW ${{ inputs.LabVIEW_Version }}\LabVIEW.exe" `
+          -PortNumber $PortNum `
+          ${{ inputs.Operation }} `
+          ${{ inputs.Parameter1 }} `
+          ${{ inputs.Parameter2 }} `
+          ${{ inputs.Parameter3 }} `
+          ${{ inputs.Parameter4 }} `
+          ${{ inputs.Parameter5 }}
       shell: powershell

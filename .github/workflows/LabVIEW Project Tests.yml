@@ -28,7 +28,7 @@ jobs:
         run: echo ${{ github.workspace }}
         shell: powershell
 
-      - name: TestEnvironment
+      - name: Run lvCICD Test cases with VITester
         uses: LV-APT/lvCICD@documentation_before_release
         with:
           Operation: StartVITester
