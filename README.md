@@ -31,28 +31,31 @@ Use this customer-action in your github CICD description file.
     1. All Parameters will be echoed to output.
 ### lvBuild
     Parameter:
-    1. LabVIEW Project File Path
-    2. (option) name of Build Specification [Empty to build all]
-    3. (option) Name of Target [My Computer]
+    1. LabVIEW Project File : Path
+    2. (option) name of Build Specification
+       - Empty to build all
+       - "" as Default
+    3. (option) Name of Target
+       - "My Computer" as Default
 ### SyncAllReposToLatest
     Parameter:
-    1. (option) SearchingFolder :Path, Empty to use <lvapt.installer>
+    1. (option) SearchingFolder : Path
 ### TriggerBuild
     Parameter:
-    1. (option) SearchingFolder :Path, Empty to use <lvapt.installer>
+    1. (option) SearchingFolder : Path
 ### ListAllReposBranches
     Parameter:
-    1. (option) SearchingFolder :Path, Empty to use <lvapt.installer>
+    1. (option) SearchingFolder : Path
 ### ListAllBuildSpecs
     Parameter:
-    1. (option) SearchingFolder :Path, Empty to use <lvapt.installer>
+    1. (option) SearchingFolder : Path
 
 ### vipm_BuildDailyVIP
     Parameter:
-    1. vipb Path :Path
-    2. (option) Install? :YES/NO
-    3. (option) CopyDestPath:Path
+    1. vipb Path : Path
+    2. (option) Install? : YES/NO
+    3. (option) CopyDestPath : Path
 
 ### StartVITester
     Parameter:
-    1. ProjectPath :Path
+    1. ProjectPath : Path
