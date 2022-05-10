@@ -24,9 +24,13 @@ jobs:
       - name: CloneRepo
         uses: actions/checkout@v2.4.2
 
+      - name: echo GITHUB_WORKSPACE
+        run: echo ${{ github.workspace }}
+        shell: powershell
+
       - name: TestEnvironment
         uses: LV-APT/lvCICD@documentation_before_release
         with:
           Operation: StartVITester
-          Parameter1: $GITHUB_WORKSPACE\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
+          Parameter1: ${{ github.workspace }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
 
