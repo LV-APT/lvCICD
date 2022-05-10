@@ -52,17 +52,19 @@ runs:
     #   run: pwd
     #   shell: powershell
     - name: "Get LabVIEW Exe Path"
-      run: $LabVIEWExePath = ${{ github.action_path }}\LabVIEW_exe_path.ps1 ${{ inputs.LabVIEW_Version }} ${{ inputs.Architecture }}
+      run:
+        $LabVIEWExePath = ${{ github.action_path }}\LabVIEW_exe_path.ps1 ${{ inputs.LabVIEW_Version }} ${{ inputs.Architecture }}
+        echo $LabVIEWExePath
       shell: powershell
 
-    - name: "Get LabVIEW Exe Path"
-      run: $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }}
+    - name: "Get Vi Server Port Number"
+      run:
+        $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }}
+        echo $PortNum
       shell: powershell
 
     - name: "Run Scripts"
       run:
-        echo $LabVIEWExePath
-        echo $PortNum
         LabVIEWCLI -OperationName RunVI `
           -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" `
           -LogFilePath ${{ github.action_path }}\lVCLI.log `
