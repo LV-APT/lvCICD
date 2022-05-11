@@ -38,49 +38,79 @@ Use this customer-action in your github CICD description file.
 
 ## Operation List
 
-### lvEcho
+### Simple Operations
+#### `lvEcho` : Echo all the parameters to outputs
 
-    Parameter:
+    Parameters:
     1. All Parameters will be echoed to output.
 
-### lvBuild
+#### `lvBuild` : Build the LabVIEW Projects specified
 
-    Parameter:
-    1. LabVIEW Project File : Path
-    2. (option) name of Build Specification
-       - Empty to build all
+    Parameters:
+    Parameter1. (required) LabVIEW Project File Path
+    Parameter2. (option) name of Build Specification, Empty to build all
        - "" as Default
-    3. (option) Name of Target
+    Parameter3. (option) Name of Target
        - "My Computer" as Default
 
-### SyncAllReposToLatest
+### Test Related Operations
 
-    Parameter:
-    1. (option) SearchingFolder : Path
+#### `StartVITester` : Start JKI VI Tester to run test cases
 
-### TriggerBuild
+    Parameters:
+    Parameter1. (required) LabVIEW Project File Path which contains the VITester test cases
 
-    Parameter:
-    1. (option) SearchingFolder : Path
+### VIPM related Operations
 
-### ListAllReposBranches
+#### `vipm_BuildDailyVIP` : Build VIPM Library
 
-    Parameter:
-    1. (option) SearchingFolder : Path
+    Requirements:
+        - VIPM API is function of PRO Edition of VIPM. You need activate the license, or use a 30-days free-trial license.
 
-### ListAllBuildSpecs
+    Parameters:
+    Parameter1. (required) vipb File Path
+    Parameter2. (required) Install? : YES/NO
+    Parameter3. (option) CopyDestPath : Path
 
-    Parameter:
-    1. (option) SearchingFolder : Path
+### Operations for build facility
 
-### vipm_BuildDailyVIP
+These operations are part of a build facility for large project with multiple repos.
+You need to pre-setup the folder contained all the repos organized as needed in the build machine.
 
-    Parameter:
-    1. vipb Path : Path
-    2. (option) Install? : YES/NO
-    3. (option) CopyDestPath : Path
+Concepts
 
-### StartVITester
+- **Build Spec Project**: A LabVIEW project with build spec in it and named as "_build.[0-9]*.xxxxx.lvproj"
+- **Build Index**: The number part in name of **Build Spec Project**.
 
-    Parameter:
-    1. ProjectPath : Path
+#### `Batch_ListReposBranches` : list all the repos' current branch
+
+    Parameters:
+    Parameter1. (required) Searching Folder
+
+#### `Batch_SyncReposToLatest` : Sync all repos to latest on the active branch in specified folder
+
+
+    Parameters:
+    Parameter1. (required) Searching Folder
+
+#### `Batch_ListBuildSpecProjects` : list all the build spec projects with build order
+
+    Notes:
+    Smaller **Build Index** means higher priority.
+    If no **Build Index** defined in name of **Build Spec Project**, the priority is the least.
+    The build order depends on the name characters. Usually it means the build order is not cared.
+    If you care about the build orders, or dependent relationship exists, add **Build Index** in **Build Spec Project**.
+
+    Parameters:
+    Parameter1. (required) Searching Folder
+
+#### `Batch_TriggerBuild` : Start build in specified folder
+
+    Notes:
+    Smaller **Build Index** means higher priority.
+    If no **Build Index** defined in name of **Build Spec Project**, the priority is the least.
+    The build order depends on the name characters. Usually it means the build order is not cared.
+    If you care about the build orders, or dependent relationship exists, add **Build Index** in **Build Spec Project**.
+
+    Parameters:
+    Parameter1. (required) Searching Folder
