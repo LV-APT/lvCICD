@@ -1,5 +1,7 @@
 # Github Action for LabVIEW CICD (lvCICD)
 
+[![LabVIEW Project Tests](https://github.com/LV-APT/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml)
+
 ## Introduction
 
 Use this customer-action in your github CICD description file.
