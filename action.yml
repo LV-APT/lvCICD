@@ -1,50 +1,48 @@
-name: 'lvCICD'
-author: 'LV-APT'
-description: 'CICD Action used for LabVIEW Users'
+name: "lvCICD"
+author: "LV-APT"
+description: "CICD Action used for LabVIEW Users"
 branding:
-  icon: 'tool'
-  color: 'green'
+  icon: "tool"
+  color: "green"
 
 inputs:
   LabVIEW_Version:
-      description: 'LabVIEW Version Used'
-      required: false
-      default: "2019"
+    description: "LabVIEW Version Used"
+    required: false
+    default: "2019"
   Architecture:
-    description: '32bit/64bit Verion of LabVIEW Used'
+    description: "32bit/64bit Verion of LabVIEW Used"
     required: false
     default: "x86"
   Operation:
-    description: 'The operation of lvCICD'
+    description: "The operation of lvCICD"
     required: false
-    default: 'lvecho'
+    default: "lvecho"
   Parameter1:
-    description: 'Parameter1 of lvCICD'
+    description: "Parameter1 of lvCICD"
     required: false
-    default: ''
+    default: ""
   Parameter2:
-    description: 'Parameter2 of lvCICD'
+    description: "Parameter2 of lvCICD"
     required: false
-    default: ''
+    default: ""
   Parameter3:
-    description: 'Parameter3 of lvCICD'
+    description: "Parameter3 of lvCICD"
     required: false
-    default: ''
+    default: ""
   Parameter4:
-    description: 'Parameter4 of lvCICD'
+    description: "Parameter4 of lvCICD"
     required: false
-    default: ''
+    default: ""
   Parameter5:
-    description: 'Parameter5 of lvCICD'
+    description: "Parameter5 of lvCICD"
     required: false
-    default: ''
-
+    default: ""
 
 runs:
   using: "composite"
 
   steps:
-
     - name: "Checkout lvCICD Action"
       uses: actions/checkout@v2.4.2
 

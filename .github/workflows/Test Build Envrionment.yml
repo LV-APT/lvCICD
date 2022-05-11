@@ -2,18 +2,13 @@ name: Test Build Envrionment
 
 # Controls when the workflow will run
 on:
-  schedule:
-    - cron: '0 16 * * *'
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [main]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-
   lvCICD:
     # The type of runner that the job will run on
     name: Test lvCICD
@@ -21,7 +16,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: CloneRepo
         uses: actions/checkout@v2.4.2
@@ -33,4 +27,3 @@ jobs:
           Parameter1: "line1"
           Parameter2: "line2"
           Parameter3: "line3"
-

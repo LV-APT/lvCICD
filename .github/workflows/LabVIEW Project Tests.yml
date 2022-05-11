@@ -3,15 +3,12 @@ name: LabVIEW Project Tests
 # Controls when the workflow will run
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [main]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-
   lvCICD:
     # The type of runner that the job will run on
     name: lvCICD LabVIEW Project Tests
@@ -19,7 +16,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: CloneRepo
         uses: actions/checkout@v2.4.2
@@ -33,4 +29,3 @@ jobs:
         with:
           Operation: StartVITester
           Parameter1: ${{ github.workspace }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
-
