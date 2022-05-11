@@ -54,6 +54,11 @@ runs:
       run:
         $LabVIEWExePath = ${{ github.action_path }}\LabVIEW_exe_path.ps1 ${{ inputs.LabVIEW_Version }} ${{ inputs.Architecture }};
         $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }};
+        if(${{ inputs.Parameter1 }}) { $Parameter1 = "${{ inputs.Parameter1}}" }
+        if(${{ inputs.Parameter2 }}) { $Parameter2 = "${{ inputs.Parameter2}}" }
+        if(${{ inputs.Parameter3 }}) { $Parameter3 = "${{ inputs.Parameter3}}" }
+        if(${{ inputs.Parameter4 }}) { $Parameter4 = "${{ inputs.Parameter4}}" }
+        if(${{ inputs.Parameter5 }}) { $Parameter5 = "${{ inputs.Parameter5}}" }
         LabVIEWCLI -OperationName RunVI `
           -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" `
           -LogFilePath ${{ github.action_path }}\lVCLI.log `
@@ -61,5 +66,5 @@ runs:
           -LabVIEWPath $LabVIEWExePath `
           -PortNumber $PortNum `
           ${{ inputs.Operation }} `
-          ${{ inputs.Parameter1 }} ${{ inputs.Parameter2 }} ${{ inputs.Parameter3 }} ${{ inputs.Parameter4 }} ${{ inputs.Parameter5 }}
+          $Parameter1 $Parameter2 $Parameter3 $Parameter4 $Parameter5
       shell: powershell
