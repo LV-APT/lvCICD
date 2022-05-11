@@ -61,9 +61,5 @@ runs:
           -LabVIEWPath $LabVIEWExePath `
           -PortNumber $PortNum `
           ${{ inputs.Operation }} `
-          ${{ inputs.Parameter1 }} `
-          ${{ inputs.Parameter2 }} `
-          ${{ inputs.Parameter3 }} `
-          ${{ inputs.Parameter4 }} `
-          ${{ inputs.Parameter5 }}
+          ${{ inputs.Parameter1 }} ${{ inputs.Parameter2 }} ${{ inputs.Parameter3 }} ${{ inputs.Parameter4 }} ${{ inputs.Parameter5 }}
       shell: powershell
