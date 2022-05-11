@@ -97,8 +97,8 @@ Concepts
 
     Notes:
     Smaller **Build Index** means higher priority.
-    If no **Build Index** defined in name of **Build Spec Project**, the priority is the least.
-    The build order depends on the name characters. Usually it means the build order is not cared.
+    If no **Build Index** defined in name of **Build Spec Project**, the priority is lowest.
+    The build order depends on the name characters. Usually no needs to care about the build orders.
     If you care about the build orders, or dependent relationship exists, add **Build Index** in **Build Spec Project**.
 
     Parameters:
@@ -108,8 +108,8 @@ Concepts
 
     Notes:
     Smaller **Build Index** means higher priority.
-    If no **Build Index** defined in name of **Build Spec Project**, the priority is the least.
-    The build order depends on the name characters. Usually it means the build order is not cared.
+    If no **Build Index** defined in name of **Build Spec Project**, the priority is lowest.
+    The build order depends on the name characters. Usually no needs to care about the build orders.
     If you care about the build orders, or dependent relationship exists, add **Build Index** in **Build Spec Project**.
 
     Parameters:
