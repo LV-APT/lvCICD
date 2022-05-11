@@ -17,6 +17,9 @@
 		<Item Name="_support" Type="Folder" URL="../_support">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="_test_cases" Type="Folder">
+			<Item Name="lvCICD_TestCase.lvclass" Type="LVClass" URL="../_test_cases/lvCICD_TestCase/lvCICD_TestCase.lvclass"/>
+		</Item>
 		<Item Name="lvCICD.vi" Type="VI" URL="../lvCICD.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">

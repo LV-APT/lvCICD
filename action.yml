@@ -1,39 +1,43 @@
-name: 'lvCICD'
-author: 'LV-APT'
-description: 'CICD Action used for LabVIEW Users'
+name: "lvCICD"
+author: "LV-APT"
+description: "CICD Action used for LabVIEW Users"
 branding:
-  icon: 'tool'
-  color: 'green'
+  icon: "tool"
+  color: "green"
 
 inputs:
-  Operation:
-    description: 'The operation of lvCICD'
-    required: false
-    default: 'lvecho'
-  Parameter1:
-    description: 'Parameter1 of lvCICD'
-    required: false
-    default: ''
-  Parameter2:
-    description: 'Parameter2 of lvCICD'
-    required: false
-    default: ''
-  Parameter3:
-    description: 'Parameter3 of lvCICD'
-    required: false
-    default: ''
-  Parameter4:
-    description: 'Parameter4 of lvCICD'
-    required: false
-    default: ''
-  Parameter5:
-    description: 'Parameter5 of lvCICD'
-    required: false
-    default: ''
   LabVIEW_Version:
-    description: 'LabVIEW Version Used'
+    description: "LabVIEW Version Used"
     required: false
     default: "2019"
+  Architecture:
+    description: "32bit/64bit Verion of LabVIEW Used"
+    required: false
+    default: "x86"
+  Operation:
+    description: "The operation of lvCICD"
+    required: false
+    default: "lvecho"
+  Parameter1:
+    description: "Parameter1 of lvCICD"
+    required: false
+    default: ""
+  Parameter2:
+    description: "Parameter2 of lvCICD"
+    required: false
+    default: ""
+  Parameter3:
+    description: "Parameter3 of lvCICD"
+    required: false
+    default: ""
+  Parameter4:
+    description: "Parameter4 of lvCICD"
+    required: false
+    default: ""
+  Parameter5:
+    description: "Parameter5 of lvCICD"
+    required: false
+    default: ""
 
 runs:
   using: "composite"
@@ -48,6 +52,19 @@ runs:
 
     - name: "Run Scripts"
       run:
+        $LabVIEWExePath = ${{ github.action_path }}\LabVIEW_exe_path.ps1 ${{ inputs.LabVIEW_Version }} ${{ inputs.Architecture }};
         $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }};
-        LabVIEWCLI -OperationName RunVI -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" -LabVIEWPath "C:\Program Files (x86)\National Instruments\LabVIEW ${{ inputs.LabVIEW_Version }}\LabVIEW.exe" -PortNumber $PortNum ${{ inputs.Operation }} ${{ inputs.Parameter1 }} ${{ inputs.Parameter2 }} ${{ inputs.Parameter3}} ${{ inputs.Parameter4}} ${{ inputs.Parameter5}}
+        $Parameter1 = "${{ inputs.Parameter1}}"; if( $Parameter1 ) { $Parameter1 = "${{ inputs.Parameter1}}" }
+        $Parameter2 = "${{ inputs.Parameter2}}"; if( $Parameter2 ) { $Parameter2 = "${{ inputs.Parameter2}}" }
+        $Parameter3 = "${{ inputs.Parameter3}}"; if( $Parameter3 ) { $Parameter3 = "${{ inputs.Parameter3}}" }
+        $Parameter4 = "${{ inputs.Parameter4}}"; if( $Parameter4 ) { $Parameter4 = "${{ inputs.Parameter4}}" }
+        $Parameter5 = "${{ inputs.Parameter5}}"; if( $Parameter5 ) { $Parameter5 = "${{ inputs.Parameter5}}" }
+        LabVIEWCLI -OperationName RunVI `
+          -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" `
+          -LogFilePath ${{ github.action_path }}\lVCLI.log `
+          -LogToConsole True `
+          -LabVIEWPath $LabVIEWExePath `
+          -PortNumber $PortNum `
+          ${{ inputs.Operation }} `
+          $Parameter1 $Parameter2 $Parameter3 $Parameter4 $Parameter5
       shell: powershell

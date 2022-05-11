@@ -1,4 +1,4 @@
-name: Test Build Envrionment
+name: LabVIEW Project Tests
 
 # Controls when the workflow will run
 on: [push,workflow_dispatch]
@@ -7,7 +7,7 @@ on: [push,workflow_dispatch]
 jobs:
   lvCICD:
     # The type of runner that the job will run on
-    name: Test lvCICD
+    name: lvCICD LabVIEW Project Tests
     runs-on: [self-hosted]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -16,10 +16,12 @@ jobs:
       - name: CloneRepo
         uses: actions/checkout@v2.4.2
 
-      - name: TestEnvironment
+      - name: echo GITHUB_WORKSPACE
+        run: echo ${{ github.workspace }}
+        shell: powershell
+
+      - name: Run lvCICD Test cases with VITester
         uses: LV-APT/lvCICD@documentation_before_release
         with:
-          Operation: lvEcho
-          Parameter1: "line1"
-          Parameter2: "line2"
-          Parameter3: "line3"
+          Operation: StartVITester
+          Parameter1: ${{ github.workspace }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
