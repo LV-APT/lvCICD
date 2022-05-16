@@ -30,7 +30,7 @@ jobs:
         uses: codacy/git-version@2.4.0
 
       - name: Git Add Azure Repo URL
-        run: git remote add origin https://ni@dev.azure.com/ni/GlobalSupport/_git/lvCICD
+        run: git remote set-url origin https://ni@dev.azure.com/ni/GlobalSupport/_git/lvCICD
 
       - name: Add Azure Repo URL
         run: git remote -v
