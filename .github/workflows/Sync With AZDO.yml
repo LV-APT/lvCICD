@@ -25,7 +25,7 @@ jobs:
           repository: ${{ github.repository }}
           ref: main
         
-      - name: show Git branch
+      - name: change remote origin url
         run: git remote set-url origin https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
         
       - name: Show Git remote
@@ -39,6 +39,9 @@ jobs:
 
       - name: config Main user.name
         run: git config --global user.name "SyncWithAZDO.yml"
+        
+      - name: push fetch main from AZDO       
+        run: git fetch --unshallow origin
 
       - name: push main branch to AZDO
         run: git push -f --tags --progress https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD main:main
