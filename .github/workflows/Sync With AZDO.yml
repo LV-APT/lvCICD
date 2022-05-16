@@ -34,6 +34,9 @@ jobs:
       - name: show Git branch
         run: git branch
 
+      - name: Checkout Main branch
+        run: git checkout main
+
       - name: git pull AZDO
         run: 
           git pull https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
