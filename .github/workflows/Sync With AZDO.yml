@@ -9,6 +9,8 @@ on:
 
   workflow_dispatch:
 
+env:
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,6 +27,7 @@ jobs:
         uses: actions/checkout@v2.4.2
         with:
           repository: ${{ github.repository }}
+          ref: main
 
       - name: Git Add Azure Repo URL
         run: git remote set-url origin https://ni@dev.azure.com/ni/GlobalSupport/_git/lvCICD
@@ -34,9 +37,7 @@ jobs:
 
       - name: push main branch to AZDO
         run:
-          MY_PAT=${{ secrets.AZDO_LVCICD_PAT_TOKEN }}
-          B64_PAT=$(printf "%s"":$MY_PAT" | base64)
-          echo ${B64_PAT}
-          git -c http.extraHeader="Authorization:Basic ${B64_PAT}" clone
+          B64_PAT=$(printf "%s"":${{ secrets.AZDO_LVCICD_PAT_TOKEN }}" | base64)
+          git -c http.extraHeader="Authorization:Basic ${B64_PAT}" push origin main
 
 
