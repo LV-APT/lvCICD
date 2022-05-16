@@ -25,9 +25,6 @@ jobs:
           repository: ${{ github.repository }}
           ref: main
 
-      - name: Git Add Azure Repo URL
-        run: git remote set-url origin https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
-
       - name: Show Git remote
         run: git remote -v
         
@@ -40,8 +37,5 @@ jobs:
       - name: config Main user.name
         run: git config --global user.name "SyncWithAZDO.yml"
 
-      - name: pull main from AZDO
-        run: git pull --progress -v --no-rebase "origin" --allow-unrelated-histories
-
       - name: push main branch to AZDO
-        run: git push --tags --progress "origin" main:main
+        run: git push --tags --progress https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD main:main
