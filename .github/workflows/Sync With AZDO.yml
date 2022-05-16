@@ -38,4 +38,4 @@ jobs:
         run: git config --global user.name "SyncWithAZDO.yml"
 
       - name: push main branch to AZDO
-        run: git push --tags --progress https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD main:main
+        run: git push -f --tags --progress https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD main:main
