@@ -34,8 +34,6 @@ jobs:
 
       - name: push main branch to AZDO
         run:
-          MY_PAT=${{ secrets.AZDO_LVCICD_PAT_TOKEN }}
-          B64_PAT=$(printf "%s"":$MY_PAT" | base64)
-          git -c http.extraHeader="Authorization:Basic ${B64_PAT}" push origin main
+          git push https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
 
 
