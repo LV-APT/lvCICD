@@ -38,4 +38,4 @@ jobs:
         run: git checkout main --
 
       - name: push main branch to AZDO
-        run: git.exe push --tags --progress "origin" main:main
+        run: git push --tags --progress "origin" main:main
