@@ -30,6 +30,9 @@ jobs:
         
       - name: show Git branch
         run: git branch
+        
+      - name: show Git branch
+        run: git remote add origin https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
 
       - name: config user.email
         run: git config --global user.email "yao.li@ni.com"
