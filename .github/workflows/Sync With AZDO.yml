@@ -47,4 +47,4 @@ jobs:
         run: git fetch origin
 
       - name: push main branch to AZDO
-        run: git push -f --tags --progress https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD main:main
+        run: git push -f --tags --progress origin main:main
