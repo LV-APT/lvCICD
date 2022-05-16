@@ -26,13 +26,13 @@ jobs:
         with:
           repository: ${{ github.repository }}
 
-      - name: Git Version
-        uses: codacy/git-version@2.4.0
-
       - name: Git Add Azure Repo URL
         run: git remote set-url origin https://ni@dev.azure.com/ni/GlobalSupport/_git/lvCICD
 
-      - name: Add Azure Repo URL
-        run: git remote -v
-        shell: bash
+      - name: push to AZDO
+        run:
+          MY_PAT=${{ secrets.AZDO_LVCICD_PAT_TOKEN }}
+          B64_PAT=$(printf "%s"":$MY_PAT" | base64)
+          git -c http.extraHeader="Authorization:Basic ${B64_PAT}" push
+
 
