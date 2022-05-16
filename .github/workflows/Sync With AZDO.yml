@@ -1,7 +1,14 @@
 name: Sync With AZDO
 
 # Controls when the workflow will run
-on: [push,workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+      - 15-support-azure-devops
+
+  workflow_dispatch:
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,6 +28,9 @@ jobs:
 
       - name: Git Version
         uses: codacy/git-version@2.4.0
+
+      - name: Git Add Azure Repo URL
+        run: git remote add origin https://ni@dev.azure.com/ni/GlobalSupport/_git/lvCICD
 
       - name: Add Azure Repo URL
         run: git remote -v
