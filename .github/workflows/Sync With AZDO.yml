@@ -33,6 +33,6 @@ jobs:
 
       - name: push main branch to AZDO
         run:
-          git push https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
+          git push https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD --tags
 
 
