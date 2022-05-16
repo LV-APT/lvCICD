@@ -24,15 +24,15 @@ jobs:
         with:
           repository: ${{ github.repository }}
           ref: main
-
+        
+      - name: show Git branch
+        run: git remote set-url origin https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
+        
       - name: Show Git remote
         run: git remote -v
         
       - name: show Git branch
         run: git branch
-        
-      - name: show Git branch
-        run: git remote set_url origin https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
 
       - name: config user.email
         run: git config --global user.email "yao.li@ni.com"
