@@ -36,6 +36,9 @@ jobs:
 
       - name: Checkout Main branch
         run: git checkout main --
+        
+      - name: pull main from AZDO
+        run: git pull --progress -v --no-rebase "origin"
 
       - name: push main branch to AZDO
         run: git push --tags --progress "origin" main:main
