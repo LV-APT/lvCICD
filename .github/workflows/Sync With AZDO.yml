@@ -35,7 +35,10 @@ jobs:
         run: git branch
 
       - name: Checkout Main branch
-        run: git checkout main --
+        run: 
+          git checkout main --
+          git config --global user.email "yao.li@ni.com"
+          git config --global user.name "Sync With AZDO.yml"
         
       - name: pull main from AZDO
         run: git pull --progress -v --no-rebase "origin" --allow-unrelated-histories
