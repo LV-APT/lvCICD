@@ -30,9 +30,16 @@ jobs:
 
       - name: Show Git remote
         run: git remote -v
+        
+      - name: show Git branch
+        run: git branch
+
+      - name: git pull AZDO
+        run: 
+          git pull https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
 
       - name: push main branch to AZDO
-        run:
-          git push https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD --tags origin main
+        run:          
+          git push https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD --tags
 
 
