@@ -40,6 +40,9 @@ jobs:
       - name: config Main user.name
         run: git config --global user.name "SyncWithAZDO.yml"
         
+      - name: allow shallowupdate
+        run: git config receive.shallowupdate true
+        
       - name: push fetch main from AZDO       
         run: git fetch --unshallow origin
 
