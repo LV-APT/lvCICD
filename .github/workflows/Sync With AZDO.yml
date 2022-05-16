@@ -36,6 +36,6 @@ jobs:
         run:
           MY_PAT=${{ secrets.AZDO_LVCICD_PAT_TOKEN }}
           B64_PAT=$(printf "%s"":$MY_PAT" | base64)
-          git -c http.extraHeader="Authorization:Basic ${B64_PAT}" push --set-upstream origin main
+          git -c http.extraHeader="Authorization:Basic ${B64_PAT}" push --set-upstream origin main --force
 
 
