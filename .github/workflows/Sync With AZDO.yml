@@ -18,6 +18,11 @@ jobs:
         uses: actions/checkout@v2.4.2
         with:
           repository: ${{ github.repository }}
-          
+
       - name: Git Version
         uses: codacy/git-version@2.4.0
+
+      - name: Add Azure Repo URL
+        run: git remote -v
+        shell: bash
+
