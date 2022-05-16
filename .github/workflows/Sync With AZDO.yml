@@ -26,7 +26,7 @@ jobs:
           ref: main
 
       - name: Git Add Azure Repo URL
-        run: git remote set-url origin https://ni@dev.azure.com/ni/GlobalSupport/_git/lvCICD
+        run: git remote set-url origin https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
 
       - name: Show Git remote
         run: git remote -v
@@ -35,14 +35,7 @@ jobs:
         run: git branch
 
       - name: Checkout Main branch
-        run: git checkout main
-
-      - name: git pull AZDO
-        run: 
-          git pull https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
+        run: git checkout main --
 
       - name: push main branch to AZDO
-        run:          
-          git push https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD --tags
-
-
+        run: git.exe push --tags --progress "origin" main:main
