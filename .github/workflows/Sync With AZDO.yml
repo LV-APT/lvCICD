@@ -8,9 +8,16 @@ jobs:
   SyncWithAZDO:
     # The type of runner that the job will run on
     name: SyncWithAZDO
-    runs-on: [linux]
+    runs-on: [ubuntu-latest]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
+      - name: Checkout
+        uses: actions/checkout@v2.4.2
+        with:
+          repository: ${{ github.repository }}
+          
+      - name: Git Version
+        uses: codacy/git-version@2.4.0
