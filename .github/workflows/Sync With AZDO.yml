@@ -44,7 +44,7 @@ jobs:
         run: git config receive.shallowupdate true
         
       - name: push fetch main from AZDO       
-        run: git fetch --unshallow origin
+        run: git fetch origin
 
       - name: push main branch to AZDO
         run: git push -f --tags --progress https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD main:main
