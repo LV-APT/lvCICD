@@ -42,6 +42,7 @@ Use this customer-action in your github CICD description file.
 ## Operation List
 
 ### Simple Operations
+
 #### `lvEcho` : Echo all the parameters to outputs
 
     Parameters:
@@ -65,15 +66,44 @@ Use this customer-action in your github CICD description file.
 
 ### VIPM related Operations
 
-#### `vipm_BuildDailyVIP` : Build VIPM Library
+Requirements:
 
-    Requirements:
-        - VIPM API is function of PRO Edition of VIPM. You need activate the license, or use a 30-days free-trial license.
+- VIPM API is function of PRO Edition of VIPM. You need activate the license, or use a 30-days free-trial license.
+
+#### `vipm_InstallPackagesbyPath` : install vip file
+
+    Parameters:
+    1. All Parameters accept a vip file path
+       1. For regular file path, the full file path will be used.
+       2. If the path not end with '.vip', recursively search will be executed the path with last part of path as pattern.
+       3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
+
+#### `vipm_InstallPackagesbyName` : install vip by Package Name
+
+    Parameters:
+    1. All Parameters accept a package name, the latest version will be used.
+
+#### `vipm_unInstallPackagesbyName` : unInstall vip by Package Name
+
+    Parameters:
+    1. All Parameters accept a package name, the latest version of installed will be used.
+
+#### `vipm_BuildDailyVIP` : Build VIPM Library
 
     Parameters:
     Parameter1. (required) vipb File Path
     Parameter2. (required) Install? : YES/NO
     Parameter3. (option) CopyDestPath : Path
+
+#### `vipm_ApplyVIPCFile` : Apply VIPC file
+
+    Parameters:
+    Parameter1. (required) VIPC File Path
+       1. For regular file path, the full file path will be used.
+       2. If the path not end with '.vipc', recursively search will be executed the path with last part of path as pattern.
+       3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
+
+vipm_ApplyVIPCFile.vi
 
 ### Operations for build facility
 
