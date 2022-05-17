@@ -95,6 +95,16 @@ Requirements:
     Parameter2. (required) Install? : YES/NO
     Parameter3. (option) CopyDestPath : Path
 
+#### `vipm_ApplyVIPCFile` : Apply VIPC file
+
+    Parameters:
+    Parameter1. (required) VIPC File Path
+       1. For regular file path, the full file path will be used.
+       2. If the path not end with '.vipc', recursively search will be executed the path with last part of path as pattern.
+       3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
+
+vipm_ApplyVIPCFile.vi
+
 ### Operations for build facility
 
 These operations are part of a build facility for large project with multiple repos.
