@@ -41,7 +41,7 @@ Use this customer-action in your github CICD description file.
 
 ### Known Issues
 
-- Only `5` Parameters could be defined
+- Only `10` Parameters could be defined
 - The name of parameter is not intuitive due to limitation of github customer action.
 
 ## Operation List

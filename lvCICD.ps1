@@ -9,8 +9,8 @@ $Architecture = $args[1]
 if($LabVIEW_Version){} else {$LabVIEW_Version = '2019'}
 if($Architecture){} else {$Architecture = 'x86'}
 
-$LabVIEWExePath = .\LabVIEW_exe_path.ps1 $LabVIEW_Version $Architecture;
-$PortNum = .\ViServerPort.ps1 $LabVIEW_Version;
+$LabVIEWExePath = & "$ScriptDir\LabVIEW_exe_path.ps1" $LabVIEW_Version $Architecture;
+$PortNum = & "$ScriptDir\ViServerPort.ps1" $LabVIEW_Version;
 $Operation = $args[2]; if($Operation){} else {$Operation = 'lvEcho'}
 $Parameter1 = $args[3]; if ( $Parameter1 ) { $Parameter1 = """$Parameter1""" }
 $Parameter2 = $args[4]; if ( $Parameter2 ) { $Parameter2 = """$Parameter2""" }
