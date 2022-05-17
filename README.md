@@ -11,11 +11,16 @@ Use this customer-action in your github CICD description file.
       uses: LV-APT/lvCICD@[lvcicd_version]
       with:
         Operation: [operation_in_list]
-        Parameter1: [1st-parameter, optional]
-        Parameter2: [2nd-parameter, optional]
-        Parameter3: [3rd-parameter, optional]
-        Parameter4: [4th-parameter, optional]
-        Parameter5: [5th-parameter, optional]
+        Parameter1: [parameter, optional]
+        Parameter2: [parameter, optional]
+        Parameter3: [parameter, optional]
+        Parameter4: [parameter, optional]
+        Parameter5: [parameter, optional]
+        Parameter6: [parameter, optional]
+        Parameter7: [parameter, optional]
+        Parameter8: [parameter, optional]
+        Parameter9: [parameter, optional]
+        Parameter10: [parameter, optional]
         LabVIEW_Version: [LabVIEW_version,2019 or Later,2019 as default]
         Architecture: x86
 
