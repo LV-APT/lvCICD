@@ -43,6 +43,18 @@ Use this customer-action in your github CICD description file.
 
 - Only `10` Parameters could be defined
 - The name of parameter is not intuitive due to limitation of github customer action.
+- You can use `[GLOBAL_MACRO]` in path parameter, for example: "[Desktop]\abc.txt" will be recognized as the path of abc.txt file in Desktop.
+  - Available `GLOBAL_MACRO`:
+    - `vi.lib`: vi.lib folder of LabVIEW
+    - `user.lib`: user.lib folder of LabVIEW
+    - `temp`: temporary folder of System
+    - `desktop`: current user's desktop folder
+    - You can also use `System Environment Variable` defined in **Environment Variables**
+  - Examples:
+    - *[vi.lib]\Utility\error.llb* stands for "C:\Program Files (x86)\National Instruments\LabVIEW 2019\vi.lib\Utility\error.llb" if LabVIEW 2019(32bit) is used for lvCICD.
+    - *[SyncPath]\abc.txt* stands for "C:\Sync\abc.txt", if you Set "SyncPath=C:\Sync" in **Environment Variables**
+
+
 
 ## Operation List
 
@@ -61,6 +73,14 @@ Use this customer-action in your github CICD description file.
        - "" as Default
     Parameter3. (option) Name of Target
        - "My Computer" as Default
+
+#### `lvCopy` : Copy Files using LabVIEW VIs
+
+    Parameters:
+    Parameter1. (required) Dest-Folder/Files of Copy operation
+    Parameter2-10. (optional) Source Files of Copy operation
+        - If no '*' contained in file name, the specified file path will be used.
+        - If '*' in file name, the file name is the search pattern. Files in folder with the pattern will all be used as source-path.
 
 ### Test Related Operations
 
