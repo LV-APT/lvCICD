@@ -19,23 +19,43 @@ inputs:
     required: false
     default: "lvecho"
   Parameter1:
-    description: "Parameter1 of lvCICD"
+    description: "Parameter of lvCICD"
     required: false
     default: ""
   Parameter2:
-    description: "Parameter2 of lvCICD"
+    description: "Parameter of lvCICD"
     required: false
     default: ""
   Parameter3:
-    description: "Parameter3 of lvCICD"
+    description: "Parameter of lvCICD"
     required: false
     default: ""
   Parameter4:
-    description: "Parameter4 of lvCICD"
+    description: "Parameter of lvCICD"
     required: false
     default: ""
   Parameter5:
-    description: "Parameter5 of lvCICD"
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter6:
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter7:
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter8:
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter9:
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter10:
+    description: "Parameter of lvCICD"
     required: false
     default: ""
 
@@ -52,19 +72,18 @@ runs:
 
     - name: "Run Scripts"
       run:
-        $LabVIEWExePath = ${{ github.action_path }}\LabVIEW_exe_path.ps1 ${{ inputs.LabVIEW_Version }} ${{ inputs.Architecture }};
-        $PortNum = ${{ github.action_path }}\ViServerPort.ps1 ${{ inputs.LabVIEW_Version }};
-        $Parameter1 = "${{ inputs.Parameter1}}"; if( $Parameter1 ) { $Parameter1 = "${{ inputs.Parameter1}}" }
-        $Parameter2 = "${{ inputs.Parameter2}}"; if( $Parameter2 ) { $Parameter2 = "${{ inputs.Parameter2}}" }
-        $Parameter3 = "${{ inputs.Parameter3}}"; if( $Parameter3 ) { $Parameter3 = "${{ inputs.Parameter3}}" }
-        $Parameter4 = "${{ inputs.Parameter4}}"; if( $Parameter4 ) { $Parameter4 = "${{ inputs.Parameter4}}" }
-        $Parameter5 = "${{ inputs.Parameter5}}"; if( $Parameter5 ) { $Parameter5 = "${{ inputs.Parameter5}}" }
-        LabVIEWCLI -OperationName RunVI `
-          -VIPath "${{ github.action_path }}\LabVIEW-Adapter\lvCICD.vi" `
-          -LogFilePath ${{ github.action_path }}\lVCLI.log `
-          -LogToConsole True `
-          -LabVIEWPath $LabVIEWExePath `
-          -PortNumber $PortNum `
-          ${{ inputs.Operation }} `
-          $Parameter1 $Parameter2 $Parameter3 $Parameter4 $Parameter5
+        ${{ github.action_path }}\lvCICD.ps1 `
+        ${{ inputs.LabVIEW_Version }} `
+        ${{ inputs.Architecture }} `
+        ${{ inputs.Operation }} `
+        ${{ inputs.Parameter1 }} `
+        ${{ inputs.Parameter2 }} `
+        ${{ inputs.Parameter3 }} `
+        ${{ inputs.Parameter4 }} `
+        ${{ inputs.Parameter5 }} `
+        ${{ inputs.Parameter6 }} `
+        ${{ inputs.Parameter7 }} `
+        ${{ inputs.Parameter8 }} `
+        ${{ inputs.Parameter9 }} `
+        ${{ inputs.Parameter10 }}
       shell: powershell

@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2.4.2
 
       - name: TestEnvironment
-        uses: LV-APT/lvCICD@main
+        uses: LV-APT/lvCICD@18-print-scripts-of-labview-cli-in-powershell
         with:
           Operation: lvEcho
           Parameter1: "line1"
