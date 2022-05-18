@@ -10,19 +10,19 @@ Use this customer-action in your github CICD description file.
     - name: [your_action_step_name]
       uses: LV-APT/lvCICD@[lvcicd_version]
       with:
-        Operation: [operation_in_list]
-        Parameter1: [parameter, optional]
-        Parameter2: [parameter, optional]
-        Parameter3: [parameter, optional]
-        Parameter4: [parameter, optional]
-        Parameter5: [parameter, optional]
-        Parameter6: [parameter, optional]
-        Parameter7: [parameter, optional]
-        Parameter8: [parameter, optional]
-        Parameter9: [parameter, optional]
-        Parameter10: [parameter, optional]
-        LabVIEW_Version: [LabVIEW_version,2019 or Later,2019 as default]
-        Architecture: x86
+        Operation: [optional, operation_in_list, 'lvEcho' as default]
+        Parameter1: [optional, parameter]
+        Parameter2: [optional, parameter]
+        Parameter3: [optional, parameter]
+        Parameter4: [optional, parameter]
+        Parameter5: [optional, parameter]
+        Parameter6: [optional, parameter]
+        Parameter7: [optional, parameter]
+        Parameter8: [optional, parameter]
+        Parameter9: [optional, parameter]
+        Parameter10: [optional, parameter]
+        LabVIEW_Version: [optional, LabVIEW_version,2019 or Later,2019 as default]
+        Architecture: [optional, x86 or x64, x86 as default]
 
 ### Pre-works
 

@@ -19,23 +19,43 @@ inputs:
     required: false
     default: "lvecho"
   Parameter1:
-    description: "Parameter1 of lvCICD"
+    description: "Parameter of lvCICD"
     required: false
     default: ""
   Parameter2:
-    description: "Parameter2 of lvCICD"
+    description: "Parameter of lvCICD"
     required: false
     default: ""
   Parameter3:
-    description: "Parameter3 of lvCICD"
+    description: "Parameter of lvCICD"
     required: false
     default: ""
   Parameter4:
-    description: "Parameter4 of lvCICD"
+    description: "Parameter of lvCICD"
     required: false
     default: ""
   Parameter5:
-    description: "Parameter5 of lvCICD"
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter6:
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter7:
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter8:
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter9:
+    description: "Parameter of lvCICD"
+    required: false
+    default: ""
+  Parameter10:
+    description: "Parameter of lvCICD"
     required: false
     default: ""
 
@@ -60,5 +80,10 @@ runs:
         ${{ inputs.Parameter2 }} `
         ${{ inputs.Parameter3 }} `
         ${{ inputs.Parameter4 }} `
-        ${{ inputs.Parameter5 }}
+        ${{ inputs.Parameter5 }} `
+        ${{ inputs.Parameter6 }} `
+        ${{ inputs.Parameter7 }} `
+        ${{ inputs.Parameter8 }} `
+        ${{ inputs.Parameter9 }} `
+        ${{ inputs.Parameter10 }}
       shell: powershell
