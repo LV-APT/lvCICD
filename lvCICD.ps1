@@ -39,6 +39,9 @@ Write-Host "Parameter10 = $Parameter10"
 Write-Host "LabVIEWExePath = $LabVIEWExePath"
 Write-Host "PortNum = $PortNum"
 
+# Start LabVIEW Process to ensure TCP Port of VI Server is active.
+Start-Process -FilePath "$LabVIEWExePath"
+
 $lvCICDVIPath = "$ScriptDir\LabVIEW-Adapter\lvCICD.vi"
 
 Write-Host "LabVIEWCLI -OperationName RunVI -VIPath ""$lvCICDVIPath"" -LogFilePath ""$ScriptDir\lVCLI.log"" -LogToConsole True -LabVIEWPath ""$LabVIEWExePath"" -PortNumber $PortNum $Operation $Parameter1 $Parameter2 $Parameter3 $Parameter4 $Parameter5"
