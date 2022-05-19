@@ -14,7 +14,7 @@ You can use **`lvCICD`** to:
 3. *Apply VIPM VIPC file(vipc)*
 4. *Run LabVIEW test cases*
 5. *Setup Large LabVIEW build facility*
-6. *<span style="color: pink;">Add your own operation, Click link to see how to contribute to it.</span>*
+6. Add your own operation, Click link to see how to contribute to it.
 
 ### Latest Version : `lvCICD@v0.2`
 ### Dependence
@@ -41,7 +41,7 @@ You can use **`lvCICD`** to:
   - You can also use `System Environment Variable` defined in **Environment Variables**
 
   Examples:
-  - If current user's desktop folder is ***C:\Users\Bob\Desktop\***
+  - If current user's desktop folder is ***C:\Users\Bob\Desktop***
     - ***"[Desktop]\abc.txt"*** -->  ***C:\Users\Bob\Desktop\abc.txt***
   - If LabVIEW 2019(32bit) is used
     - ***[vi.lib]\Utility\error.llb*** --> ***"C:\Program Files (x86)\National Instruments\LabVIEW 2019\vi.lib\Utility\error.llb"***
@@ -61,7 +61,7 @@ You can use **`lvCICD`** to:
 
 Add this customer-action to `steps` session in github actions yml file.
 
-> *<span style="color: pink;">Copy this snippet to github workflow yml file and change the `[xxx]` following your own sensoria.</span>*
+> Copy this snippet to github workflow yml file and change the `[xxx]` following your own sensoria.
 
     - name: [your_action_step_name]
       uses: LV-APT/lvCICD@[lvcicd_version]
@@ -80,7 +80,7 @@ Add this customer-action to `steps` session in github actions yml file.
         LabVIEW_Version: [optional, LabVIEW_version,2019 or Later,2019 as default]
         Architecture: [optional, x86 or x64, x86 as default]
 
-Example 1: use `lvEcho` to check runner/agent ready for lvCICD tools.
+**Example 1**: use `lvEcho` to check runner/agent ready for lvCICD tools.
 
       - name: TestEnvironment
         uses: LV-APT/lvCICD@v0.2
@@ -90,7 +90,7 @@ Example 1: use `lvEcho` to check runner/agent ready for lvCICD tools.
           Parameter2: "line2"
           Parameter3: "line3"
 
-Example 2: use `StartVITester` to run unit test cases in "CICD-LabVIEW-Adapter.lvproj".
+**Example 2**: use `StartVITester` to run unit test cases in "CICD-LabVIEW-Adapter.lvproj".
 
       - name: Run lvCICD Test cases with VITester
         uses: LV-APT/lvCICD@v0.2
@@ -104,7 +104,7 @@ Example 2: use `StartVITester` to run unit test cases in "CICD-LabVIEW-Adapter.l
 
 Add Variables needed for lvCICD in Azure DevOps Pipeline yml file.
 
-*<span style="color: pink;">Change the `lvCICD-Tool-Version`/`LabVIEW-Version`/`LabVIEW-Architecture` following your own sensoria.</span>*
+> Change the `lvCICD-Tool-Version`/`LabVIEW-Version`/`LabVIEW-Architecture` following your own sensoria.
 
     variables:
     - name: lvCICD-Tool-URL
@@ -124,7 +124,7 @@ Add Variables needed for lvCICD in Azure DevOps Pipeline yml file.
 
 Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipeline yml file.
 
-*<span style="color: pink;">Copy this snippet to your Azure DevOps Pipeline yml file as it is. You don't need to change it.</span>*
+> Copy this snippet to your Azure DevOps Pipeline yml file as it is. You don't need to change it.
 
      - task: PowerShell@2
        displayName: Clone lvCICD Tools
@@ -146,7 +146,7 @@ Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipelin
 
 Add task of lvCICD to DevOps Pipeline yml file.
 
-*<span style="color: pink;">Copy this snippet to DevOps Pipeline yml file and change the `[xxx]` following your own sensoria.</span>*
+> Copy this snippet to DevOps Pipeline yml file and change the `[xxx]` following your own sensoria.
 
      - task: PowerShell@2
        displayName: [your_action_step_name]
@@ -156,7 +156,7 @@ Add task of lvCICD to DevOps Pipeline yml file.
            # Write your PowerShell commands here.
            & $(lvCICD) [Operation] [Parameter1] [Parameter2] [Parameter3] ...
 
-Example 1: use `lvEcho` to check runner/agent ready for lvCICD tools.
+**Example 1**: use `lvEcho` to check runner/agent ready for lvCICD tools.
 
      - task: PowerShell@2
        displayName: lvEcho
@@ -165,7 +165,7 @@ Example 1: use `lvEcho` to check runner/agent ready for lvCICD tools.
          script: |
            & $(lvCICD) lvEcho a b c
 
-Example 2: use `lvBuild` to build "lvCICD-Example.lvproj" which contains a build spec in it.
+**Example 2**: use `lvBuild` to build "lvCICD-Example.lvproj" which contains a build spec in it.
 
      - task: PowerShell@2
        displayName: lvBuild
