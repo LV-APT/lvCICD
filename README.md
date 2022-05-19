@@ -26,9 +26,10 @@ Use this customer-action in your github CICD description file.
 
 ### Pre-works
 
-  1. Setup a self-host runner for your repo
-  2. Install [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
-  3. Install dependent VIPM Libraries.
+  1. Setup a self-host runner for your repo.
+  2. Install LabVIEW and its components needed with NI Package Manger.
+  3. Install [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
+  4. Install dependent VIPM Libraries. [lvCICD.vipc Download Link](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)
 
 ### Dependence
 
