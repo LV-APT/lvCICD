@@ -82,21 +82,21 @@ Add this customer-action to `steps` session in github actions yml file.
 
 **Example 1**: use `lvEcho` to check runner/agent ready for lvCICD tools.
 
-      - name: TestEnvironment
-        uses: LV-APT/lvCICD@v0.2
-        with:
-          Operation: lvEcho
-          Parameter1: "line1"
-          Parameter2: "line2"
-          Parameter3: "line3"
+    - name: TestEnvironment
+      uses: LV-APT/lvCICD@v0.2
+      with:
+        Operation: lvEcho
+        Parameter1: "line1"
+        Parameter2: "line2"
+      	Parameter3: "line3"
 
 **Example 2**: use `StartVITester` to run unit test cases in "CICD-LabVIEW-Adapter.lvproj".
 
-      - name: Run lvCICD Test cases with VITester
-        uses: LV-APT/lvCICD@v0.2
-        with:
-          Operation: StartVITester
-          Parameter1: ${{ github.workspace }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
+    - name: Run lvCICD Test cases with VITester
+      uses: LV-APT/lvCICD@v0.2
+      with:
+        Operation: StartVITester
+        Parameter1: ${{ github.workspace }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
 
 ### Azure DevOps
 
@@ -126,21 +126,21 @@ Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipelin
 
 > Copy this snippet to your Azure DevOps Pipeline yml file as it is. You don't need to change it.
 
-     - task: PowerShell@2
-       displayName: Clone lvCICD Tools
-       inputs:
-           targetType: 'inline'
-           script: |
-           # Show Parameters
-           Write-Host "lvCICD-Tool-LocalPath = $(lvCICD-Tool-LocalPath)"
-           Write-Host "lvCICD-Tool-URL = $(lvCICD-Tool-URL)"
-           Write-Host "lvCICD-Tool-Version = $(lvCICD-Tool-Version)"
-           # Remove temp files
-           Write-Host "if ( Test-Path -Path ""$(lvCICD-Tool-LocalPath)"") { Remove-Item -Recurse -Force ""$(lvCICD-Tool-LocalPath)"" }"
-           if ( Test-Path -Path "$(lvCICD-Tool-LocalPath)") { Remove-Item -Recurse -Force "$(lvCICD-Tool-LocalPath)" }
-           # Clone Tools
-           Write-Host "git clone --progress --depth 1 --branch $(lvCICD-Tool-Version) ""$(lvCICD-Tool-URL)"" ""$(lvCICD-Tool-LocalPath)"""
-           git clone --progress --depth 1 --branch $(lvCICD-Tool-Version) "$(lvCICD-Tool-URL)" "$(lvCICD-Tool-LocalPath)"
+    - task: PowerShell@2
+      displayName: Clone lvCICD Tools
+      inputs:
+          targetType: 'inline'
+          script: |
+          # Show Parameters
+          Write-Host "lvCICD-Tool-LocalPath = $(lvCICD-Tool-LocalPath)"
+          Write-Host "lvCICD-Tool-URL = $(lvCICD-Tool-URL)"
+          Write-Host "lvCICD-Tool-Version = $(lvCICD-Tool-Version)"
+          # Remove temp files
+          Write-Host "if ( Test-Path -Path ""$(lvCICD-Tool-LocalPath)"") { Remove-Item -Recurse -Force ""$(lvCICD-Tool-LocalPath)"" }"
+          if ( Test-Path -Path "$(lvCICD-Tool-LocalPath)") { Remove-Item -Recurse -Force "$(lvCICD-Tool-LocalPath)" }
+          # Clone Tools
+          Write-Host "git clone --progress --depth 1 --branch $(lvCICD-Tool-Version) ""$(lvCICD-Tool-URL)"" ""$(lvCICD-Tool-LocalPath)"""
+          git clone --progress --depth 1 --branch $(lvCICD-Tool-Version) "$(lvCICD-Tool-URL)" "$(lvCICD-Tool-LocalPath)"
 
 #### Step 3
 
@@ -148,33 +148,33 @@ Add task of lvCICD to DevOps Pipeline yml file.
 
 > Copy this snippet to DevOps Pipeline yml file and change the `[xxx]` following your own sensoria.
 
-     - task: PowerShell@2
-       displayName: [your_action_step_name]
-       inputs:
-         targetType: 'inline'
-         script: |
-           # Write your PowerShell commands here.
-           & $(lvCICD) [Operation] [Parameter1] [Parameter2] [Parameter3] ...
+    - task: PowerShell@2
+      displayName: [your_action_step_name]
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your PowerShell commands here.
+          & $(lvCICD) [Operation] [Parameter1] [Parameter2] [Parameter3] ...
 
 **Example 1**: use `lvEcho` to check runner/agent ready for lvCICD tools.
 
-     - task: PowerShell@2
-       displayName: lvEcho
-       inputs:
-         targetType: 'inline'
-         script: |
-           & $(lvCICD) lvEcho a b c
+    - task: PowerShell@2
+      displayName: lvEcho
+      inputs:
+        targetType: 'inline'
+        script: |
+          & $(lvCICD) lvEcho a b c
 
 **Example 2**: use `lvBuild` to build "lvCICD-Example.lvproj" which contains a build spec in it.
 
-     - task: PowerShell@2
-       displayName: lvBuild
-       inputs:
-         targetType: 'inline'
-         script: |
-           Write-Host "$(Pipeline.Workspace)"
-           Write-Host "$(Build.Repository.LocalPath)"
-           & $(lvCICD) lvBuild '$(Build.Repository.LocalPath)\lvCICD-Example.lvproj'
+    - task: PowerShell@2
+      displayName: lvBuild
+      inputs:
+        targetType: 'inline'
+        script: |
+          Write-Host "$(Pipeline.Workspace)"
+          Write-Host "$(Build.Repository.LocalPath)"
+          & $(lvCICD) lvBuild '$(Build.Repository.LocalPath)\lvCICD-Example.lvproj'
 
 ## Operation List
 
