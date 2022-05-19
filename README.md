@@ -108,17 +108,17 @@ Add Variables needed for lvCICD in Azure DevOps Pipeline yml file.
 
     variables:
     - name: lvCICD-Tool-URL
-    value: https://github.com/LV-APT/lvCICD
+      value: https://github.com/LV-APT/lvCICD
     - name: lvCICD-Tool-LocalPath
-    value: $(Agent.TempDirectory)\lvCICD
+      value: $(Agent.TempDirectory)\lvCICD
     - name: lvCICD-Tool-Version
-    value: v0.2
+      value: v0.2
     - name: lvCICD
-    value: '"$(lvCICD-Tool-LocalPath)\lvCICD.ps1" $(LabVIEW-Version) $(LabVIEW-Architecture)'
+      value: '"$(lvCICD-Tool-LocalPath)\lvCICD.ps1" $(LabVIEW-Version) $(LabVIEW-Architecture)'
     - name: LabVIEW-Version
-    value: '2019'
+      value: '2019'
     - name: LabVIEW-Architecture
-    value: x86
+      value: x86
 
 #### Step 2
 
@@ -173,6 +173,7 @@ Add task of lvCICD to DevOps Pipeline yml file.
          targetType: 'inline'
          script: |
            Write-Host "$(Pipeline.Workspace)"
+           Write-Host "$(Build.Repository.LocalPath)"
            & $(lvCICD) lvBuild '$(Build.Repository.LocalPath)\lvCICD-Example.lvproj'
 
 ## Operation List
