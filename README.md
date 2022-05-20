@@ -1,4 +1,4 @@
-# Github Action for LabVIEW CICD (lvCICD)
+# Customer Action for LabVIEW CI/CD (lvCICD)
 
 [![Sync With AZDO](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml)
 [![LabVIEW Project Tests](https://github.com/LV-APT/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml)
@@ -61,7 +61,7 @@ You can use **`lvCICD`** to:
 
 Add this customer-action to `steps` session in github actions yml file.
 
-> Copy this snippet to github workflow yml file and change the `[xxx]` following your own sensoria.
+> Copy this snippet to github workflow yml file and change the `[xxx]` following your self-hosted agent/runner configuration.
 
     - name: [your_action_step_name]
       uses: LV-APT/lvCICD@[lvcicd_version]
@@ -104,7 +104,7 @@ Add this customer-action to `steps` session in github actions yml file.
 
 Add Variables needed for lvCICD in Azure DevOps Pipeline yml file.
 
-> Change the `lvCICD-Tool-Version`/`LabVIEW-Version`/`LabVIEW-Architecture` following your own sensoria.
+> Change the `lvCICD-Tool-Version`/`LabVIEW-Version`/`LabVIEW-Architecture` following your self-hosted agent/runner configuration.
 
     variables:
     - name: lvCICD-Tool-URL
@@ -146,7 +146,7 @@ Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipelin
 
 Add task of lvCICD to DevOps Pipeline yml file.
 
-> Copy this snippet to DevOps Pipeline yml file and change the `[xxx]` following your own sensoria.
+> Copy this snippet to DevOps Pipeline yml file and change the `[xxx]` following your self-hosted agent/runner configuration.
 
     - task: PowerShell@2
       displayName: [your_action_step_name]
@@ -215,7 +215,7 @@ Requirements:
 
 - VIPM API is function of PRO Edition of VIPM. You need activate the license, or use a 30-days free-trial license.
 
-#### `vipm_InstallPackagesbyPath` : install vip file
+#### `vipm_InstallPackagesByPath` : install vip file
 
     Parameters:
     1. All Parameters accept a vip file path
@@ -223,12 +223,12 @@ Requirements:
        2. If the path not end with '.vip', recursively search will be executed the path with last part of path as pattern.
        3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
 
-#### `vipm_InstallPackagesbyName` : install vip by Package Name
+#### `vipm_InstallPackagesByName` : install vip by Package Name
 
     Parameters:
     1. All Parameters accept a package name, the latest version will be used.
 
-#### `vipm_unInstallPackagesbyName` : unInstall vip by Package Name
+#### `vipm_unInstallPackagesByName` : unInstall vip by Package Name
 
     Parameters:
     1. All Parameters accept a package name, the latest version of installed will be used.
