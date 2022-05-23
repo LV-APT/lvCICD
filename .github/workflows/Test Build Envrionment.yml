@@ -27,11 +27,9 @@ jobs:
 
       - name: use output
         run:
-          echo ${{ steps.step1.output.test }}
-          echo ${{ steps.step2.output.test }}
-          echo ${{ steps.create-step.output.abc }}
-
-
+          echo ${{ steps.step1.outputs.test }}
+          echo ${{ steps.step2.outputs.test }}
+          echo ${{ steps.create-step.outputs.abc }}
 
       - name: TestEnvironment
         id: lvEcho
@@ -44,5 +42,5 @@ jobs:
 
       - name: Check output of previous step
         run:
-          echo ${{ Steps.lvEcho.outputs.output }}
+          echo ${{ steps.lvEcho.outputs.output }}
 
