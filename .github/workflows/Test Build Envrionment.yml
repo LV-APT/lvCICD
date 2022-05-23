@@ -16,6 +16,13 @@ jobs:
       - name: CloneRepo
         uses: actions/checkout@v2.4.2
 
+      - name: createOutput
+        id: create-step
+        run: echo "::set-output abc=$(123)"
+
+      - name: use output
+        run: echo ${{ steps.create-step.output.abc }}
+
       - name: TestEnvironment
         id: lvEcho
         uses: LV-APT/lvCICD@23-update-documentation
