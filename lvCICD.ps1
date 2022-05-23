@@ -77,4 +77,4 @@ if(Test-Path -Path "$outputVFile"){
 Write-Output "outputVFile=$outputVFile"
 Write-Output "outputV=$outputV"
 Write-Output '::set-output name=output::$( $outputV )'
-Write-Output "::set-output name=output::$( $outputV )"
+Write-Output ::set-output name=output::$( $outputV )
