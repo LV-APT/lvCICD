@@ -61,7 +61,7 @@ inputs:
 outputs:
   Result:
     description: "Output of lvCICD"
-    value: ${{ steps.lvCICDScript.outputs.outputV }}
+    value: ${{ steps.lvCICDScript.outputs.Result }}
 runs:
   using: "composite"
 
@@ -76,7 +76,7 @@ runs:
     - name: "Run-lvCICD-Scripts"
       id: lvCICDScript
       run:
-        $outputV=${{ github.action_path }}\lvCICD.ps1 `
+        ${{ github.action_path }}\lvCICD.ps1 `
         ${{ inputs.LabVIEW_Version }} `
         ${{ inputs.Architecture }} `
         ${{ inputs.Operation }} `
@@ -90,6 +90,7 @@ runs:
         ${{ inputs.Parameter8 }} `
         ${{ inputs.Parameter9 }} `
         ${{ inputs.Parameter10 }};
-        Write-Host "$outputV";
-        Write-Host "::set-output name=outputV::""$outputV"""
+        $Result = Get-Content -Path "${{ github.action_path }}\output.txt"
+        Write-Host "Result=$Result"
+        Write-Host "::set-output name=Result::""$Result"""
       shell: powershell

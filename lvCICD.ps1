@@ -69,11 +69,4 @@ LabVIEWCLI -OperationName RunVI `
     $Parameter10
 
 $outputVFile="$lvCICD_Tool_dir\output.txt"
-$outputV=""
-if(Test-Path -Path "$outputVFile"){
-    Write-Host """$outputVFile"" found!"
-    $outputV = Get-Content -Path "$outputVFile"
-}
-Write-Host "outputVFile=$outputVFile"
-Write-Host "outputV=$outputV"
-return $outputV
+Write-Host "lvCICD output is saved to ""$outputVFile"""
