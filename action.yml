@@ -91,7 +91,14 @@ runs:
         ${{ inputs.Parameter8 }} `
         ${{ inputs.Parameter9 }} `
         ${{ inputs.Parameter10 }}
-        echo ""
-        echo "outputV=$outputV"
+
+        $outputVFile="${{ github.action_path }}\output.txt"
+        $outputV=""
+        if(Test-Path -Path "$outputVFile"){
+            Write-Host """$outputVFile"" found!"
+            $outputV = Get-Content -Path "$outputVFile"
+        }
+        Write-Host "outputVFile=$outputVFile"
+        Write-Host "outputV=$outputV"
         echo "::set-output name=outputV::$outputV"
       shell: powershell
