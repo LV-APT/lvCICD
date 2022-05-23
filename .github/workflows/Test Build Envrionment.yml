@@ -17,9 +17,14 @@ jobs:
         uses: actions/checkout@v2.4.2
 
       - name: TestEnvironment
-        uses: LV-APT/lvCICD@v0.2
+        uses: LV-APT/lvCICD@23-update-documentation
         with:
           Operation: lvEcho
           Parameter1: "line1"
           Parameter2: "line2"
           Parameter3: "line3"
+
+      - name: Check output of previous step
+        run:
+          Write Host {Steps.TestEnvironment.output}
+

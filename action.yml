@@ -58,19 +58,22 @@ inputs:
     description: "Parameter of lvCICD"
     required: false
     default: ""
-
+outputs:
+  output:
+    description: "Output of lvCICD"
+    value: ${{ steps.Run-lvCICD-Scripts.outputs.outputV }}
 runs:
   using: "composite"
 
   steps:
-    - name: "Checkout lvCICD Action"
+    - name: "Checkout-lvCICD-Action"
       uses: actions/checkout@v2.4.2
 
     # - name: "Show working dir"
     #   run: pwd
     #   shell: powershell
 
-    - name: "Run Scripts"
+    - name: "Run-lvCICD-Scripts"
       run:
         ${{ github.action_path }}\lvCICD.ps1 `
         ${{ inputs.LabVIEW_Version }} `
