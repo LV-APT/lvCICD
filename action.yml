@@ -61,7 +61,7 @@ inputs:
 outputs:
   output:
     description: "Output of lvCICD"
-    value: ${{ steps.Run-lvCICD-Scripts.outputs.outputV }}
+    value: ${{ steps.lvCICDScript.outputs.outputV }}
 runs:
   using: "composite"
 
@@ -74,6 +74,7 @@ runs:
     #   shell: powershell
 
     - name: "Run-lvCICD-Scripts"
+      id: lvCICDScript
       run:
         ${{ github.action_path }}\lvCICD.ps1 `
         ${{ inputs.LabVIEW_Version }} `
