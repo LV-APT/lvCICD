@@ -76,4 +76,4 @@ if(Test-Path -Path "$outputVFile"){
 }
 Write-Host "outputVFile=$outputVFile"
 Write-Host "outputV=$outputV"
-return $outputV
+Write-Host "::set-output name=outputV::""$outputV"""
