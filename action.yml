@@ -76,6 +76,7 @@ runs:
     - name: "Run-lvCICD-Scripts"
       id: lvCICDScript
       run:
+        $outputV = `
         ${{ github.action_path }}\lvCICD.ps1 `
         ${{ inputs.LabVIEW_Version }} `
         ${{ inputs.Architecture }} `
@@ -90,4 +91,5 @@ runs:
         ${{ inputs.Parameter8 }} `
         ${{ inputs.Parameter9 }} `
         ${{ inputs.Parameter10 }}
+        echo "::set-output name=output::$outputV"
       shell: powershell
