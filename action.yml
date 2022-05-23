@@ -91,6 +91,7 @@ runs:
         ${{ inputs.Parameter8 }} `
         ${{ inputs.Parameter9 }} `
         ${{ inputs.Parameter10 }}
-        echo '::set-output name=outputV::$outputV'
+        echo ""
+        echo "outputV=$outputV"
         echo "::set-output name=outputV::$outputV"
       shell: powershell
