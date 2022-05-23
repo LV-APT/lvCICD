@@ -23,10 +23,10 @@ You can use **`lvCICD`** to:
 - [LabVIEW 2019 or Later](https://www.ni.com/zh-cn/support/downloads/software-products/download.labview.html)
 - [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
 - VIPM Libraries: [VIPM vipc file Download Link](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)
-  - [OpenG by OpenG](https://www.vipm.io/package/openg.org_lib_openg_toolkit/)
-  - [Git API by Hampel Software Engineering](https://www.vipm.io/package/hse_lib_git_api/)
-  - [VIPM API by JKI](https://www.vipm.io/package/jki_lib_vipm_api/)
-  - [JKI VI Tester by JKI](https://www.vipm.io/package/jki_labs_tool_vi_tester/)
+  - [OpenG by OpenG](https://www.vipm.io/package/openg.org_lib_openg_toolkit/) (LabVIEW >= 2009)
+  - [Git API by Hampel Software Engineering](https://www.vipm.io/package/hse_lib_git_api/) (LabVIEW  >= 2016)
+  - [VIPM API by JKI](https://www.vipm.io/package/jki_lib_vipm_api/) (LabVIEW  >= 2013)
+  - [JKI VI Tester by JKI](https://www.vipm.io/package/jki_labs_tool_vi_tester/) (LabVIEW  >= 2013)
 
 ### Known Issues
 
