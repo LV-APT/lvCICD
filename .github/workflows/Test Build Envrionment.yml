@@ -18,12 +18,13 @@ jobs:
 
       - id: step1
         run: echo "::set-output name=test::hello"
+
       - id: step2
         run: echo "::set-output name=test::world"
 
       - name: createOutput
         id: create-step
-        run: echo "::set-output name=abc::123"
+        run: echo "::set-output name=abc::""a b c"""
 
       - name: use output
         run:
@@ -42,5 +43,5 @@ jobs:
 
       - name: Check output of previous step
         run:
-          echo ${{ steps.lvEcho.outputs.output }}
+          echo ${{ steps.lvEcho.outputs.Result }}
 

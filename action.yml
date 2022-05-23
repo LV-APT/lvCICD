@@ -59,7 +59,7 @@ inputs:
     required: false
     default: ""
 outputs:
-  output:
+  Result:
     description: "Output of lvCICD"
     value: ${{ steps.lvCICDScript.outputs.outputV }}
 runs:
@@ -76,7 +76,7 @@ runs:
     - name: "Run-lvCICD-Scripts"
       id: lvCICDScript
       run:
-        $outputV=${{ github.action_path }}\lvCICD.ps1 `
+        ${{ github.action_path }}\lvCICD.ps1 `
         ${{ inputs.LabVIEW_Version }} `
         ${{ inputs.Architecture }} `
         ${{ inputs.Operation }} `
@@ -90,6 +90,4 @@ runs:
         ${{ inputs.Parameter8 }} `
         ${{ inputs.Parameter9 }} `
         ${{ inputs.Parameter10 }}
-
-        Write-Host "outputV=$outputV"
       shell: powershell
