@@ -157,6 +157,8 @@ Add this customer-action to `steps` session in github actions yml file.
 
 > Check [**lvCICD Operation-List**](docs/Operation-List.md) for detailed information.
 
+> https://docs.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=powershell
+
     - task: PowerShell@2
       displayName: [your_action_step_name]
       inputs:
