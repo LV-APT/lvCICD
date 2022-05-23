@@ -76,7 +76,6 @@ runs:
     - name: "Run-lvCICD-Scripts"
       id: lvCICDScript
       run:
-        $outputV = `
         ${{ github.action_path }}\lvCICD.ps1 `
         ${{ inputs.LabVIEW_Version }} `
         ${{ inputs.Architecture }} `
@@ -97,6 +96,8 @@ runs:
         if(Test-Path -Path "$outputVFile"){
             Write-Host """$outputVFile"" found!"
             $outputV = Get-Content -Path "$outputVFile"
+        }else
+        {
         }
         Write-Host "outputVFile=$outputVFile"
         Write-Host "outputV=$outputV"
