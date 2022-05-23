@@ -10,11 +10,12 @@ This repo is used to complete the missing part of LabVIEW operations in Continuo
 You can use **`lvCICD`** to:
 
 1. *Build your LabVIEW project/LabVIEW FPGA bitfile*
-2. *Install/uninstall VIPM libraries(vip)*
-3. *Apply VIPM VIPC file(vipc)*
-4. *Run LabVIEW test cases*
-5. *Setup Large LabVIEW build facility*
-6. *Add your own operation, Click link to see how to contribute to it*
+2. *[TODO] Start Vi Analyzer*
+3. *Run LabVIEW test cases*
+4. *Install/uninstall VIPM libraries(vip)*
+5. *Apply VIPM VIPC file(vipc)*
+6. *Setup Large LabVIEW build facility*
+7. *Add your own operation, Click link to see how to contribute to it*
 
 ### Latest Version : `lvCICD@v0.2`
 
@@ -52,10 +53,16 @@ You can use **`lvCICD`** to:
 ## Pre-works
 
   1. Setup a self-host runner for your repo.
-     1. Add your self-hosted Windows Machine to pool
-        1. Add self-hosted Agent to Azure DevOps
-        2. Add self-hosted Runner to Github
-  2. Install LabVIEW and its components needed with NI Package Manger.
+     1. Add your self-hosted Windows Machine to pool [`Azure DevOps`](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-windows?view=azure-devops) | [`Github`](https://docs.github.com/en/enterprise-server@3.2/actions/hosting-your-own-runners/adding-self-hosted-runners)
+     2. Tips:
+        1. **[!IMPORTANT!]** Please read [Security hardening for GitHub Actions](https://docs.github.com/en/enterprise-server@3.5/actions/security-guides/security-hardening-for-github-actions#hardening-for-self-hosted-runners) before using a self-host runner in public repos.
+        Best practice:
+           1. Do NOT use `pull_request` trigger for public repos.
+           2. Only use actions created by GitHub or verified creators in marketplace.
+           3. Use github secret to store your critical information instead of using plant-text in workflow yml file.
+        2. Running Powershell Scripts needs to be enabled on the system. [Reference](https://www.partitionwizard.com/clone-disk/running-scripts-is-disabled-on-this-system.html)
+        3. If you set the runner/agent application as a service, please set the account to current user. You can use `whoami` command to check the current user.
+  2. Install LabVIEW and its components needed with [NI Package Manger](https://www.ni.com/zh-cn/support/downloads/software-products/download.package-manager.html)
   3. Install [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
   4. Install dependent VIPM Libraries ([lvCICD.vipc](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)).
 
