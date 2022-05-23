@@ -16,12 +16,22 @@ jobs:
       - name: CloneRepo
         uses: actions/checkout@v2.4.2
 
+      - id: step1
+        run: echo "::set-output name=test::hello"
+      - id: step2
+        run: echo "::set-output name=test::world"
+
       - name: createOutput
         id: create-step
-        run: echo "::set-output name=abc::$(123)"
+        run: echo "::set-output name=abc::123"
 
       - name: use output
-        run: echo ${{ steps.create-step.output.abc }}
+        run:
+          echo ${{ steps.step1.output.test }}
+          echo ${{ steps.step2.output.test }}
+          echo ${{ steps.create-step.output.abc }}
+
+
 
       - name: TestEnvironment
         id: lvEcho
