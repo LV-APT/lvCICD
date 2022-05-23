@@ -26,5 +26,5 @@ jobs:
 
       - name: Check output of previous step
         run:
-          Write Host ${{ Steps.TestEnvironment.output }}
+          Write Host ${{ Steps.TestEnvironment.outputs.output }}
 
