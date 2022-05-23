@@ -18,7 +18,7 @@ jobs:
 
       - name: createOutput
         id: create-step
-        run: echo "::set-output abc=$(123)"
+        run: echo "::set-output name=abc::$(123)"
 
       - name: use output
         run: echo ${{ steps.create-step.output.abc }}
