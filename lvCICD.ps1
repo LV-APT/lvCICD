@@ -74,6 +74,7 @@ if(Test-Path -Path "$outputVFile"){
     Write-Output """$outputVFile"" found!"
     $outputV = Get-Content -Path "$outputVFile"
 }
-Write-Output '::set-output name=output::$( $outputV )'
+Write-Output "outputVFile=$outputVFile"
 Write-Output "outputV=$outputV"
+Write-Output '::set-output name=output::$( $outputV )'
 Write-Output "::set-output name=output::$( $outputV )"
