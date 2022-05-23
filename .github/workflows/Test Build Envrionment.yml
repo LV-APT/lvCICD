@@ -23,7 +23,7 @@ jobs:
         run: echo "::set-output name=test::world"
 
       - id: create-step
-        run: echo "::set-output name=abc::""a b c"""
+        run: echo "::set-output name=abc::"a b c""
 
       - name: use output
         run:
