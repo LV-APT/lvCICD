@@ -90,5 +90,6 @@ runs:
         ${{ inputs.Parameter8 }} `
         ${{ inputs.Parameter9 }} `
         ${{ inputs.Parameter10 }};
+        Write-Host "$outputV";
         Write-Host "::set-output name=outputV::""$outputV"""
       shell: powershell
