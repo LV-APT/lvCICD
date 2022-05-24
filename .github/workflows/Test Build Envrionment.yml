@@ -33,7 +33,7 @@ jobs:
 
       - name: TestEnvironment
         id: lvEcho
-        uses: LV-APT/lvCICD@23-update-documentation
+        uses: LV-APT/lvCICD@main
         with:
           Operation: lvEcho
           Parameter1: "line1"
