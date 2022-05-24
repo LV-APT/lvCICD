@@ -163,10 +163,6 @@ Add this customer-action to `steps` session in github actions yml file.
 
 > Check [**lvCICD Operation-List**](docs/Operation-List.md) for detailed information.
 
-> https://docs.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=powershell
-
-
-
     - task: PowerShell@2
       displayName: [your_action_step_name]
       inputs:
@@ -175,7 +171,7 @@ Add this customer-action to `steps` session in github actions yml file.
           # Write your PowerShell commands here.
           & $(lvCICD) [Operation] [Parameter1] [Parameter2] [Parameter3] ...
 
-> If you need to use Result of lvCICD, use this snippet instead. Change variable name in your case.
+> If you need to use Result of lvCICD, use this snippet instead. Change variable name in your case. Refer to [Set variables in scripts](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=powershell) for more information.
 
     - task: PowerShell@2
       displayName: [your_action_step_name]
