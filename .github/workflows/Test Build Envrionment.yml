@@ -1,4 +1,4 @@
-name: Test Build Envrionment
+name: Test Build Environment
 
 # Controls when the workflow will run
 on: [push,workflow_dispatch]
@@ -16,10 +16,31 @@ jobs:
       - name: CloneRepo
         uses: actions/checkout@v2.4.2
 
+      - id: step1
+        run: echo "::set-output name=test::hello"
+
+      - id: step2
+        run: echo "::set-output name=test::world"
+
+      - id: create-step
+        run: echo "::set-output name=abc::a b c"
+
+      - name: use output
+        run:
+          echo ${{ steps.step1.outputs.test }}
+          echo ${{ steps.step2.outputs.test }}
+          echo ${{ steps.create-step.outputs.abc }}
+
       - name: TestEnvironment
-        uses: LV-APT/lvCICD@v0.2
+        id: lvEcho
+        uses: LV-APT/lvCICD@23-update-documentation
         with:
           Operation: lvEcho
           Parameter1: "line1"
           Parameter2: "line2"
           Parameter3: "line3"
+
+      - name: Check output of previous step
+        run:
+          echo ${{ steps.lvEcho.outputs.Result }}
+

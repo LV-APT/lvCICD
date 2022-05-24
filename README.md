@@ -1,4 +1,4 @@
-# Github Action for LabVIEW CICD (lvCICD)
+# Customer Action for LabVIEW CI/CD (lvCICD)
 
 [![Sync With AZDO](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml)
 [![LabVIEW Project Tests](https://github.com/LV-APT/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml)
@@ -10,22 +10,24 @@ This repo is used to complete the missing part of LabVIEW operations in Continuo
 You can use **`lvCICD`** to:
 
 1. *Build your LabVIEW project/LabVIEW FPGA bitfile*
-2. *Install/uninstall VIPM libraries(vip)*
-3. *Apply VIPM VIPC file(vipc)*
-4. *Run LabVIEW test cases*
-5. *Setup Large LabVIEW build facility*
-6. Add your own operation, Click link to see how to contribute to it.
+2. *[TODO] Start Vi Analyzer*
+3. *Run LabVIEW test cases*
+4. *Install/uninstall VIPM libraries(vip)*
+5. *Apply VIPM VIPC file(vipc)*
+6. *Setup Large LabVIEW build facility*
+7. *Add your own operation, [Click link to see how to contribute to it](docs/How-to-contribute.md)*
 
 ### Latest Version : `lvCICD@v0.2`
+
 ### Dependence
 
 - [LabVIEW 2019 or Later](https://www.ni.com/zh-cn/support/downloads/software-products/download.labview.html)
 - [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
 - VIPM Libraries: [VIPM vipc file Download Link](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)
-  - [OpenG by OpenG](https://www.vipm.io/package/openg.org_lib_openg_toolkit/)
-  - [Git API by Hampel Software Engineering](https://www.vipm.io/package/hse_lib_git_api/)
-  - [VIPM API by JKI](https://www.vipm.io/package/jki_lib_vipm_api/)
-  - [JKI VI Tester by JKI](https://www.vipm.io/package/jki_labs_tool_vi_tester/)
+  - [OpenG by OpenG](https://www.vipm.io/package/openg.org_lib_openg_toolkit/) (LabVIEW >= 2009)
+  - [Git API by Hampel Software Engineering](https://www.vipm.io/package/hse_lib_git_api/) (LabVIEW  >= 2016)
+  - [VIPM API by JKI](https://www.vipm.io/package/jki_lib_vipm_api/) (LabVIEW  >= 2013)
+  - [JKI VI Tester by JKI](https://www.vipm.io/package/jki_labs_tool_vi_tester/) (LabVIEW  >= 2013)
 
 ### Known Issues
 
@@ -51,9 +53,19 @@ You can use **`lvCICD`** to:
 ## Pre-works
 
   1. Setup a self-host runner for your repo.
-  2. Install LabVIEW and its components needed with NI Package Manger.
+     1. Add your self-hosted Windows Machine to pool [`Azure DevOps`](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-windows?view=azure-devops) | [`Github`](https://docs.github.com/en/enterprise-server@3.2/actions/hosting-your-own-runners/adding-self-hosted-runners)
+     2. Tips:
+        1. **[!IMPORTANT!]** Please read [Security hardening for GitHub Actions](https://docs.github.com/en/enterprise-server@3.5/actions/security-guides/security-hardening-for-github-actions#hardening-for-self-hosted-runners) before using a self-host runner in public repos.
+        Best practice:
+           1. Do NOT use `pull_request` trigger for public repos.
+           2. Only use actions created by GitHub or verified creators in marketplace.
+           3. Use github secret to store your critical information instead of using plant-text in workflow yml file.
+        2. Running Powershell Scripts needs to be enabled on the system. [Reference](https://www.partitionwizard.com/clone-disk/running-scripts-is-disabled-on-this-system.html)
+        3. If you set the runner/agent application as a service, please set the account to current user. You can use `whoami` command to check the current user.
+  2. Install LabVIEW and its components needed with [NI Package Manger](https://www.ni.com/zh-cn/support/downloads/software-products/download.package-manager.html)
   3. Install [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
   4. Install dependent VIPM Libraries ([lvCICD.vipc](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)).
+  5. Install the softwares needed for your own case.
 
 ## Usage
 
@@ -61,10 +73,15 @@ You can use **`lvCICD`** to:
 
 Add this customer-action to `steps` session in github actions yml file.
 
-> Copy this snippet to github workflow yml file and change the `[xxx]` following your own sensoria.
+> Copy this snippet to github workflow yml file and change the `[xxx]` following your self-hosted agent/runner configuration.
+
+> Use `${{ steps.[step-id].result.Result }}` in next steps to use result of lvCICD.
+
+> Check [**lvCICD Operation-List**](docs/Operation-List.md) for detailed information.
 
     - name: [your_action_step_name]
       uses: LV-APT/lvCICD@[lvcicd_version]
+      id: [step-id]
       with:
         Operation: [optional, operation_in_list, 'lvEcho' as default]
         Parameter1: [optional, parameter]
@@ -83,6 +100,7 @@ Add this customer-action to `steps` session in github actions yml file.
 **Example 1**: use `lvEcho` to check runner/agent ready for lvCICD tools.
 
     - name: TestEnvironment
+      id: lvEcho
       uses: LV-APT/lvCICD@v0.2
       with:
         Operation: lvEcho
@@ -93,6 +111,7 @@ Add this customer-action to `steps` session in github actions yml file.
 **Example 2**: use `StartVITester` to run unit test cases in "CICD-LabVIEW-Adapter.lvproj".
 
     - name: Run lvCICD Test cases with VITester
+      id: StartVITester
       uses: LV-APT/lvCICD@v0.2
       with:
         Operation: StartVITester
@@ -100,11 +119,9 @@ Add this customer-action to `steps` session in github actions yml file.
 
 ### Azure DevOps
 
-#### Step 1
+#### Step 1: Add Variables needed for lvCICD in Azure DevOps Pipeline yml file.
 
-Add Variables needed for lvCICD in Azure DevOps Pipeline yml file.
-
-> Change the `lvCICD-Tool-Version`/`LabVIEW-Version`/`LabVIEW-Architecture` following your own sensoria.
+> Change the `lvCICD-Tool-Version`/`LabVIEW-Version`/`LabVIEW-Architecture` following your self-hosted agent/runner configuration.
 
     variables:
     - name: lvCICD-Tool-URL
@@ -120,17 +137,15 @@ Add Variables needed for lvCICD in Azure DevOps Pipeline yml file.
     - name: LabVIEW-Architecture
       value: x86
 
-#### Step 2
-
-Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipeline yml file.
+#### Step 2: Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipeline yml file.
 
 > Copy this snippet to your Azure DevOps Pipeline yml file as it is. You don't need to change it.
 
     - task: PowerShell@2
       displayName: Clone lvCICD Tools
       inputs:
-          targetType: 'inline'
-          script: |
+        targetType: 'inline'
+        script: |
           # Show Parameters
           Write-Host "lvCICD-Tool-LocalPath = $(lvCICD-Tool-LocalPath)"
           Write-Host "lvCICD-Tool-URL = $(lvCICD-Tool-URL)"
@@ -142,11 +157,11 @@ Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipelin
           Write-Host "git clone --progress --depth 1 --branch $(lvCICD-Tool-Version) ""$(lvCICD-Tool-URL)"" ""$(lvCICD-Tool-LocalPath)"""
           git clone --progress --depth 1 --branch $(lvCICD-Tool-Version) "$(lvCICD-Tool-URL)" "$(lvCICD-Tool-LocalPath)"
 
-#### Step 3
+#### Step 3: Add task of lvCICD to DevOps Pipeline yml file.
 
-Add task of lvCICD to DevOps Pipeline yml file.
+> Copy this snippet to DevOps Pipeline yml file and change the `[xxx]` following your self-hosted agent/runner configuration.
 
-> Copy this snippet to DevOps Pipeline yml file and change the `[xxx]` following your own sensoria.
+> Check [**lvCICD Operation-List**](docs/Operation-List.md) for detailed information.
 
     - task: PowerShell@2
       displayName: [your_action_step_name]
@@ -155,6 +170,18 @@ Add task of lvCICD to DevOps Pipeline yml file.
         script: |
           # Write your PowerShell commands here.
           & $(lvCICD) [Operation] [Parameter1] [Parameter2] [Parameter3] ...
+
+> If you need to use Result of lvCICD, use this snippet instead. Change variable name in your case. Refer to [Set variables in scripts](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=powershell) for more information.
+
+    - task: PowerShell@2
+      displayName: [your_action_step_name]
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your PowerShell commands here.
+          & $(lvCICD) [Operation] [Parameter1] [Parameter2] [Parameter3] ...
+          $Result=Get-Content -Path "$(lvCICD-Tool-LocalPath)\output.txt";
+          Write-Host "##vso[task.setvariable variable=lvEchoOutput;]$Result"
 
 **Example 1**: use `lvEcho` to check runner/agent ready for lvCICD tools.
 
@@ -175,118 +202,3 @@ Add task of lvCICD to DevOps Pipeline yml file.
           Write-Host "$(Pipeline.Workspace)"
           Write-Host "$(Build.Repository.LocalPath)"
           & $(lvCICD) lvBuild '$(Build.Repository.LocalPath)\lvCICD-Example.lvproj'
-
-## Operation List
-
-### Simple Operations
-
-#### `lvEcho` : Echo all the parameters to outputs
-
-    Parameters:
-    1. All Parameters will be echoed to output.
-
-#### `lvBuild` : Build the LabVIEW Projects specified
-
-    Parameters:
-    Parameter1. (required) LabVIEW Project File Path
-    Parameter2. (option) name of Build Specification, Empty to build all
-       - "" as Default
-    Parameter3. (option) Name of Target
-       - "My Computer" as Default
-
-#### `lvCopy` : Copy Files using LabVIEW VIs
-
-    Parameters:
-    Parameter1. (required) Dest-Folder/Files of Copy operation
-    Parameter2-10. (optional) Source Files of Copy operation
-        - If no '*' contained in file name, the specified file path will be used.
-        - If '*' in file name, the file name is the search pattern. Files in folder with the pattern will all be used as source-path.
-
-### Test Related Operations
-
-#### `StartVITester` : Start JKI VI Tester to run test cases
-
-    Parameters:
-    Parameter1. (required) LabVIEW Project File Path which contains the VITester test cases
-
-### VIPM related Operations
-
-Requirements:
-
-- VIPM API is function of PRO Edition of VIPM. You need activate the license, or use a 30-days free-trial license.
-
-#### `vipm_InstallPackagesbyPath` : install vip file
-
-    Parameters:
-    1. All Parameters accept a vip file path
-       1. For regular file path, the full file path will be used.
-       2. If the path not end with '.vip', recursively search will be executed the path with last part of path as pattern.
-       3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
-
-#### `vipm_InstallPackagesbyName` : install vip by Package Name
-
-    Parameters:
-    1. All Parameters accept a package name, the latest version will be used.
-
-#### `vipm_unInstallPackagesbyName` : unInstall vip by Package Name
-
-    Parameters:
-    1. All Parameters accept a package name, the latest version of installed will be used.
-
-#### `vipm_BuildDailyVIP` : Build VIPM Library
-
-    Parameters:
-    Parameter1. (required) vipb File Path
-    Parameter2. (required) Install? : YES/NO
-    Parameter3. (option) CopyDestPath : Path
-
-#### `vipm_ApplyVIPCFile` : Apply VIPC file
-
-    Parameters:
-    Parameter1. (required) VIPC File Path
-       1. For regular file path, the full file path will be used.
-       2. If the path not end with '.vipc', recursively search will be executed the path with last part of path as pattern.
-       3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
-
-### Operations for build facility
-
-These operations are part of a build facility for large project with multiple repos.
-You need to pre-setup the folder contained all the repos organized as needed in the build machine.
-
-Concepts
-
-- **Build Spec Project**: A LabVIEW project with build spec in it and named as "_build.[0-9]*.xxxxx.lvproj"
-- **Build Index**: The number part in name of **Build Spec Project**.
-
-#### `Batch_ListReposBranches` : list all the repos' current branch
-
-    Parameters:
-    Parameter1. (required) Searching Folder
-
-#### `Batch_SyncReposToLatest` : Sync all repos to latest on the active branch in specified folder
-
-
-    Parameters:
-    Parameter1. (required) Searching Folder
-
-#### `Batch_ListBuildSpecProjects` : list all the build spec projects with build order
-
-    Notes:
-    Smaller **Build Index** means higher priority.
-    If no **Build Index** defined in name of **Build Spec Project**, the priority is lowest.
-    The build order depends on the name characters. Usually no needs to care about the build orders.
-    If you care about the build orders, or dependent relationship exists, add **Build Index** in **Build Spec Project**.
-
-    Parameters:
-    Parameter1. (required) Searching Folder
-
-#### `Batch_TriggerBuild` : Start build in specified folder
-
-    Notes:
-    Smaller **Build Index** means higher priority.
-    If no **Build Index** defined in name of **Build Spec Project**, the priority is lowest.
-    The build order depends on the name characters. Usually no needs to care about the build orders.
-    If you care about the build orders, or dependent relationship exists, add **Build Index** in **Build Spec Project**.
-
-    Parameters:
-    Parameter1. (required) Searching Folder

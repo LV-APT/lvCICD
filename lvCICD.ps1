@@ -1,16 +1,16 @@
 # Determine script location for PowerShell
 
 
-$ScriptDir = Split-Path $script:MyInvocation.MyCommand.Path
-Write-Host "Current script directory is $ScriptDir"
+$lvCICD_Tool_dir = Split-Path $script:MyInvocation.MyCommand.Path
+Write-Host "lvCICD tool script directory is $lvCICD_Tool_dir"
 
 $LabVIEW_Version = $args[0]
 $Architecture = $args[1]
 if($LabVIEW_Version){} else {$LabVIEW_Version = '2019'}
 if($Architecture){} else {$Architecture = 'x86'}
 
-$LabVIEWExePath = & "$ScriptDir\LabVIEW_exe_path.ps1" $LabVIEW_Version $Architecture;
-$PortNum = & "$ScriptDir\ViServerPort.ps1" $LabVIEW_Version;
+$LabVIEWExePath = & "$lvCICD_Tool_dir\scripts\LabVIEW_exe_path.ps1" $LabVIEW_Version $Architecture;
+$PortNum = & "$lvCICD_Tool_dir\scripts\ViServerPort.ps1" $LabVIEW_Version;
 $Operation = $args[2]; if($Operation){} else {$Operation = 'lvEcho'}
 $Parameter1 = $args[3]; if ( $Parameter1 ) { $Parameter1 = "'$Parameter1'" }
 $Parameter2 = $args[4]; if ( $Parameter2 ) { $Parameter2 = "'$Parameter2'" }
@@ -46,13 +46,13 @@ Start-Process -FilePath "$LabVIEWExePath"
 # Wait 10 second for LabVIEW Starting up
 Start-Sleep -Seconds 10
 
-$lvCICDVIPath = "$ScriptDir\LabVIEW-Adapter\lvCICD.vi"
+$lvCICDVIPath = "$lvCICD_Tool_dir\LabVIEW-Adapter\lvCICD.vi"
 
-Write-Host "LabVIEWCLI -OperationName RunVI -VIPath ""$lvCICDVIPath"" -LogFilePath ""$ScriptDir\lVCLI.log"" -LogToConsole True -LabVIEWPath ""$LabVIEWExePath"" -PortNumber $PortNum $Operation $Parameter1 $Parameter2 $Parameter3 $Parameter4 $Parameter5"
+Write-Host "LabVIEWCLI -OperationName RunVI -VIPath ""$lvCICDVIPath"" -LogFilePath ""$lvCICD_Tool_dir\lVCLI.log"" -LogToConsole True -LabVIEWPath ""$LabVIEWExePath"" -PortNumber $PortNum $Operation $Parameter1 $Parameter2 $Parameter3 $Parameter4 $Parameter5"
 
 LabVIEWCLI -OperationName RunVI `
     -VIPath "$lvCICDVIPath" `
-    -LogFilePath "$ScriptDir\lVCLI.log" `
+    -LogFilePath "$lvCICD_Tool_dir\lVCLI.log" `
     -LogToConsole True `
     -LabVIEWPath "$LabVIEWExePath" `
     -PortNumber $PortNum `
@@ -67,3 +67,8 @@ LabVIEWCLI -OperationName RunVI `
     $Parameter8 `
     $Parameter9 `
     $Parameter10
+
+$outputVFile="$lvCICD_Tool_dir\output.txt"
+Write-Host "lvCICD output is saved to ""$outputVFile"""
+$Result=Get-Content -Path "$outputVFile";
+Write-Host "Result=$Result";
