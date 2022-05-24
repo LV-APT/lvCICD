@@ -8,7 +8,8 @@ Here is what happened after a self-hosted agent/runner receives a task.
 2. The information including `LabVIEW Version` | `LabVIEW Architecture` | `Operation` | `Parameters` will be passed to LabVIEW CLI, through powershell script-call.
     1. In github, You can use customer-action like lvCICD@v0.2 in step. The specified tag of repo will be download implicitly. And lvCICD.ps1 will be called implicitly.
     2. In Azure DevOps, You need to explicitly download lvCICD tools with powershell scripts. And you need to use the tool explicitly in powershell scripts.
-3. LabVIEW CLI start `lvCICD.vi` with specified LabVIEW. The `Operation VI` in script folder will be called in `lvCICD.vi`. Parameters are Passed to `Operation VI`.
+3. LabVIEW CLI start ***lvCICD.vi*** with specified LabVIEW. The ***Operation VI*** in script folder will be called in ***lvCICD.vi***. Parameters are Passed to ***Operation VI***.
+4. ***lvCICD.vi*** saves the `Result` of ***Operation VI*** to 'result.txt'
 
 ## 1. Contribute to powershell scripts
 

@@ -65,6 +65,7 @@ You can use **`lvCICD`** to:
   2. Install LabVIEW and its components needed with [NI Package Manger](https://www.ni.com/zh-cn/support/downloads/software-products/download.package-manager.html)
   3. Install [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
   4. Install dependent VIPM Libraries ([lvCICD.vipc](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)).
+  5. Install the softwares needed for your own case.
 
 ## Usage
 
@@ -74,10 +75,13 @@ Add this customer-action to `steps` session in github actions yml file.
 
 > Copy this snippet to github workflow yml file and change the `[xxx]` following your self-hosted agent/runner configuration.
 
+> Use `${{ steps.[step-id].result.Result }}` in next steps to use result of lvCICD.
+
 > Check [**lvCICD Operation-List**](docs/Operation-List.md) for detailed information.
 
     - name: [your_action_step_name]
       uses: LV-APT/lvCICD@[lvcicd_version]
+      id: [step-id]
       with:
         Operation: [optional, operation_in_list, 'lvEcho' as default]
         Parameter1: [optional, parameter]
@@ -96,6 +100,7 @@ Add this customer-action to `steps` session in github actions yml file.
 **Example 1**: use `lvEcho` to check runner/agent ready for lvCICD tools.
 
     - name: TestEnvironment
+      id: lvEcho
       uses: LV-APT/lvCICD@v0.2
       with:
         Operation: lvEcho
@@ -106,6 +111,7 @@ Add this customer-action to `steps` session in github actions yml file.
 **Example 2**: use `StartVITester` to run unit test cases in "CICD-LabVIEW-Adapter.lvproj".
 
     - name: Run lvCICD Test cases with VITester
+      id: StartVITester
       uses: LV-APT/lvCICD@v0.2
       with:
         Operation: StartVITester
@@ -138,8 +144,8 @@ Add this customer-action to `steps` session in github actions yml file.
     - task: PowerShell@2
       displayName: Clone lvCICD Tools
       inputs:
-          targetType: 'inline'
-          script: |
+        targetType: 'inline'
+        script: |
           # Show Parameters
           Write-Host "lvCICD-Tool-LocalPath = $(lvCICD-Tool-LocalPath)"
           Write-Host "lvCICD-Tool-URL = $(lvCICD-Tool-URL)"
@@ -159,6 +165,8 @@ Add this customer-action to `steps` session in github actions yml file.
 
 > https://docs.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=powershell
 
+
+
     - task: PowerShell@2
       displayName: [your_action_step_name]
       inputs:
@@ -166,6 +174,18 @@ Add this customer-action to `steps` session in github actions yml file.
         script: |
           # Write your PowerShell commands here.
           & $(lvCICD) [Operation] [Parameter1] [Parameter2] [Parameter3] ...
+
+> If you need to use Result of lvCICD, use this snippet instead. Change variable name in your case.
+
+    - task: PowerShell@2
+      displayName: [your_action_step_name]
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your PowerShell commands here.
+          & $(lvCICD) [Operation] [Parameter1] [Parameter2] [Parameter3] ...
+          $Result=Get-Content -Path "$(lvCICD-Tool-LocalPath)\output.txt";
+          Write-Host "##vso[task.setvariable variable=lvEchoOutput;]$Result"
 
 **Example 1**: use `lvEcho` to check runner/agent ready for lvCICD tools.
 

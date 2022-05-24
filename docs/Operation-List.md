@@ -5,31 +5,39 @@
 ### `lvEcho` : Echo all the parameters to outputs
 
     Parameters:
-    1. All Parameters will be echoed to output.
+        1. All Parameters will be echoed to output.
+    Result:
+        String concatenated with all parameters
 
 ### `lvBuild` : Build the LabVIEW Projects specified
 
     Parameters:
-    Parameter1. (required) LabVIEW Project File Path
-    Parameter2. (option) name of Build Specification, Empty to build all
-       - "" as Default
-    Parameter3. (option) Name of Target
-       - "My Computer" as Default
+        Parameter1. (required) LabVIEW Project File Path
+        Parameter2. (option) name of Build Specification, Empty to build all
+           - "" as Default
+        Parameter3. (option) Name of Target
+           - "My Computer" as Default
+    Result:
+        N/A
 
 ### `lvCopy` : Copy Files using LabVIEW VIs
 
     Parameters:
-    Parameter1. (required) Dest-Folder/Files of Copy operation
-    Parameter2-10. (optional) Source Files of Copy operation
-        - If no '*' contained in file name, the specified file path will be used.
-        - If '*' in file name, the file name is the search pattern. Files in folder with the pattern will all be used as source-path.
+        Parameter1. (required) Dest-Folder/Files of Copy operation
+        Parameter2-10. (optional) Source Files of Copy operation
+            - If no '*' contained in file name, the specified file path will be used.
+            - If '*' in file name, the file name is the search pattern. Files in folder with the pattern will all be used as source-path.
+    Result:
+        N/A
 
 ## Test Related Operations
 
 ### `StartVITester` : Start JKI VI Tester to run test cases
 
     Parameters:
-    Parameter1. (required) LabVIEW Project File Path which contains the VITester test cases
+        Parameter1. (required) LabVIEW Project File Path which contains the VITester test cases
+    Result:
+        N/A
 
 ## VIPM related Operations
 
@@ -40,35 +48,45 @@ Requirements:
 ### `vipm_InstallPackagesByPath` : install vip file
 
     Parameters:
-    1. All Parameters accept a vip file path
-       1. For regular file path, the full file path will be used.
-       2. If the path not end with '.vip', recursively search will be executed the path with last part of path as pattern.
-       3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
+        1. All Parameters accept a vip file path
+           1. For regular file path, the full file path will be used.
+           2. If the path not end with '.vip', recursively search will be executed the path with last part of path as pattern.
+           3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
+    Result:
+        N/A
 
 ### `vipm_InstallPackagesByName` : install vip by Package Name
 
     Parameters:
-    1. All Parameters accept a package name, the latest version will be used.
+        1. All Parameters accept a package name, the latest version will be used.
+    Result:
+        N/A
 
 ### `vipm_unInstallPackagesByName` : unInstall vip by Package Name
 
     Parameters:
-    1. All Parameters accept a package name, the latest version of installed will be used.
+        1. All Parameters accept a package name, the latest version of installed will be used.
+    Result:
+        N/A
 
 ### `vipm_BuildDailyVIP` : Build VIPM Library
 
     Parameters:
-    Parameter1. (required) vipb File Path
-    Parameter2. (required) Install? : YES/NO
-    Parameter3. (option) CopyDestPath : Path
+        Parameter1. (required) vipb File Path
+        Parameter2. (required) Install? : YES/NO
+        Parameter3. (option) CopyDestPath : Path
+    Result:
+        Generated VIP file path
 
 ### `vipm_ApplyVIPCFile` : Apply VIPC file
 
     Parameters:
-    Parameter1. (required) VIPC File Path
-       1. For regular file path, the full file path will be used.
-       2. If the path not end with '.vipc', recursively search will be executed the path with last part of path as pattern.
-       3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
+        Parameter1. (required) VIPC File Path
+           1. For regular file path, the full file path will be used.
+           2. If the path not end with '.vipc', recursively search will be executed the path with last part of path as pattern.
+           3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
+    Result:
+        vipc file path used
 
 ## Operations for build facility
 
@@ -83,13 +101,16 @@ Concepts
 ### `Batch_ListReposBranches` : list all the repos' current branch
 
     Parameters:
-    Parameter1. (required) Searching Folder
+        Parameter1. (required) Searching Folder
+    Result:
+        N/A
 
 ### `Batch_SyncReposToLatest` : Sync all repos to latest on the active branch in specified folder
 
-
     Parameters:
-    Parameter1. (required) Searching Folder
+        Parameter1. (required) Searching Folder
+    Result:
+        N/A
 
 ### `Batch_ListBuildSpecProjects` : list all the build spec projects with build order
 
@@ -100,7 +121,9 @@ Concepts
     If you care about the build orders, or dependent relationship exists, add **Build Index** in **Build Spec Project**.
 
     Parameters:
-    Parameter1. (required) Searching Folder
+        Parameter1. (required) Searching Folder
+    Result:
+        N/A
 
 ### `Batch_TriggerBuild` : Start build in specified folder
 
@@ -111,4 +134,6 @@ Concepts
     If you care about the build orders, or dependent relationship exists, add **Build Index** in **Build Spec Project**.
 
     Parameters:
-    Parameter1. (required) Searching Folder
+        Parameter1. (required) Searching Folder
+    Result:
+        N/A
