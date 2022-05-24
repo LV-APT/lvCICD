@@ -101,7 +101,7 @@ Add this customer-action to `steps` session in github actions yml file.
 
     - name: TestEnvironment
       id: lvEcho
-      uses: LV-APT/lvCICD@v0.2
+      uses: LV-APT/lvCICD@v0.3
       with:
         Operation: lvEcho
         Parameter1: "line1"
@@ -112,7 +112,7 @@ Add this customer-action to `steps` session in github actions yml file.
 
     - name: Run lvCICD Test cases with VITester
       id: StartVITester
-      uses: LV-APT/lvCICD@v0.2
+      uses: LV-APT/lvCICD@v0.3
       with:
         Operation: StartVITester
         Parameter1: ${{ github.workspace }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
@@ -129,7 +129,7 @@ Add this customer-action to `steps` session in github actions yml file.
     - name: lvCICD-Tool-LocalPath
       value: $(Agent.TempDirectory)\lvCICD
     - name: lvCICD-Tool-Version
-      value: v0.2
+      value: v0.3
     - name: lvCICD
       value: '"$(lvCICD-Tool-LocalPath)\lvCICD.ps1" $(LabVIEW-Version) $(LabVIEW-Architecture)'
     - name: LabVIEW-Version
