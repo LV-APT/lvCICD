@@ -20,7 +20,7 @@ Steps:
     1. File Name is the operation name.
     2. `CommandLine` is the list of `Parameter0` .. `Parameter10` from workflow yml file.
     3. If the parameter is a path, use *"LabVIEW-Adapter\_support\parameter to Path_lvcicd.vi"* to resolve the relative path.
-    4. `Test Detials` String and `error out` information will be published to log.
+    4. `Test Details` String and `error out` information will be published to log.
 3. Add your operation VI to *"_test_cases\lvCICD_TestCase"* for unit test.
 4. Start a pull request.
 
