@@ -17,6 +17,8 @@ You can use **`lvCICD`** to:
 6. *Setup Large LabVIEW build facility*
 7. *Add your own operation, [Click link to see how to contribute to it](docs/How-to-contribute.md)*
 
+Check [**lvCICD Operation-List**](docs/Operation-List.md) for operations of `lvCICD`.
+
 ### Latest Version : `lvCICD@v0.3`
 
 ### Dependence
@@ -61,7 +63,7 @@ You can use **`lvCICD`** to:
            2. Only use actions created by GitHub or verified creators in marketplace.
            3. Use github secret to store your critical information instead of using plant-text in workflow yml file.
         2. Running Powershell Scripts needs to be enabled on the system. [Reference](https://www.partitionwizard.com/clone-disk/running-scripts-is-disabled-on-this-system.html)
-        3. If you set the runner/agent application as a service, please set the account to current user. You can use `whoami` command to check the current user.
+        3. If you set the runner/agent application as a service, please set the account to current user. This makes it easier to set up the environment. You can use `whoami` command to check the current user.  
   2. Install LabVIEW and its components needed with [NI Package Manger](https://www.ni.com/zh-cn/support/downloads/software-products/download.package-manager.html)
   3. Install [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
   4. Install dependent VIPM Libraries ([lvCICD.vipc](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)).
@@ -73,10 +75,10 @@ You can use **`lvCICD`** to:
 
 Add this customer-action to `steps` session in github actions yml file.
 
-> Copy this snippet to github workflow yml file and change the `[xxx]` following your self-hosted agent/runner configuration.
-
+> Copy this snippet to github workflow yml file and change the content quoted by `[]` following your self-hosted agent/runner configuration and operation to execute.
+>
 > Use `${{ steps.[step-id].result.Result }}` in next steps to use result of lvCICD.
-
+>
 > Check [**lvCICD Operation-List**](docs/Operation-List.md) for detailed information.
 
     - name: [your_action_step_name]
@@ -101,25 +103,25 @@ Add this customer-action to `steps` session in github actions yml file.
 
     - name: TestEnvironment
       id: lvEcho
-      uses: LV-APT/lvCICD@v0.2
+      uses: LV-APT/lvCICD@v0.3
       with:
         Operation: lvEcho
         Parameter1: "line1"
         Parameter2: "line2"
-      	Parameter3: "line3"
+        Parameter3: "line3"
 
 **Example 2**: use `StartVITester` to run unit test cases in "CICD-LabVIEW-Adapter.lvproj".
 
     - name: Run lvCICD Test cases with VITester
       id: StartVITester
-      uses: LV-APT/lvCICD@v0.2
+      uses: LV-APT/lvCICD@v0.3
       with:
         Operation: StartVITester
         Parameter1: ${{ github.workspace }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
 
 ### Azure DevOps
 
-#### Step 1: Add Variables needed for lvCICD in Azure DevOps Pipeline yml file.
+#### Step 1: Add Variables needed for lvCICD in Azure DevOps Pipeline yml file
 
 > Change the `lvCICD-Tool-Version`/`LabVIEW-Version`/`LabVIEW-Architecture` following your self-hosted agent/runner configuration.
 
@@ -129,7 +131,7 @@ Add this customer-action to `steps` session in github actions yml file.
     - name: lvCICD-Tool-LocalPath
       value: $(Agent.TempDirectory)\lvCICD
     - name: lvCICD-Tool-Version
-      value: v0.2
+      value: v0.3
     - name: lvCICD
       value: '"$(lvCICD-Tool-LocalPath)\lvCICD.ps1" $(LabVIEW-Version) $(LabVIEW-Architecture)'
     - name: LabVIEW-Version
@@ -137,8 +139,10 @@ Add this customer-action to `steps` session in github actions yml file.
     - name: LabVIEW-Architecture
       value: x86
 
-#### Step 2: Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipeline yml file.
+#### Step 2: Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipeline yml file
 
+> lvCICD tool repo needs to be downloaded before taking any operation by `lvCICD`.
+>
 > Copy this snippet to your Azure DevOps Pipeline yml file as it is. You don't need to change it.
 
     - task: PowerShell@2
@@ -157,10 +161,10 @@ Add this customer-action to `steps` session in github actions yml file.
           Write-Host "git clone --progress --depth 1 --branch $(lvCICD-Tool-Version) ""$(lvCICD-Tool-URL)"" ""$(lvCICD-Tool-LocalPath)"""
           git clone --progress --depth 1 --branch $(lvCICD-Tool-Version) "$(lvCICD-Tool-URL)" "$(lvCICD-Tool-LocalPath)"
 
-#### Step 3: Add task of lvCICD to DevOps Pipeline yml file.
+#### Step 3: Add task of lvCICD to DevOps Pipeline yml file
 
-> Copy this snippet to DevOps Pipeline yml file and change the `[xxx]` following your self-hosted agent/runner configuration.
-
+> Copy this snippet to DevOps Pipeline yml file and change the content quoted by `[]` following your self-hosted agent/runner configuration and operation to execute.
+>
 > Check [**lvCICD Operation-List**](docs/Operation-List.md) for detailed information.
 
     - task: PowerShell@2
@@ -171,7 +175,11 @@ Add this customer-action to `steps` session in github actions yml file.
           # Write your PowerShell commands here.
           & $(lvCICD) [Operation] [Parameter1] [Parameter2] [Parameter3] ...
 
-> If you need to use Result of lvCICD, use this snippet instead. Change variable name in your case. Refer to [Set variables in scripts](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=powershell) for more information.
+> If you need to use the output of lvCICD operation, use this snippet instead.
+>
+> `lvCICD` operation saves the output to ***"$(lvCICD-Tool-LocalPath)\output.txt"***. The additional code in the task exports the result to a variable named `lvEchoOutput`, which could be used in following steps.
+>
+> Change variable name in your case. Refer to [Set variables in scripts](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=powershell) for more information.
 
     - task: PowerShell@2
       displayName: [your_action_step_name]
