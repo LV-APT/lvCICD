@@ -17,7 +17,7 @@ You can use **`lvCICD`** to:
 6. *Setup Large LabVIEW build facility*
 7. *Add your own operation, [Click link to see how to contribute to it](docs/How-to-contribute.md)*
 
-### Latest Version : `lvCICD@v0.2`
+### Latest Version : `lvCICD@v0.3`
 
 ### Dependence
 
