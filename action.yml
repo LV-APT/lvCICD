@@ -92,5 +92,4 @@ runs:
         ${{ inputs.Parameter10 }};
         $Result=Get-Content -Path "${{ github.action_path }}\output.txt";
         Write-Host "::set-output name=Result::$Result"
-        Write-Host "${{steps.lvCICDScript.results.Result}}"
       shell: powershell
