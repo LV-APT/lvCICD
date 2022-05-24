@@ -61,7 +61,7 @@ You can use **`lvCICD`** to:
            2. Only use actions created by GitHub or verified creators in marketplace.
            3. Use github secret to store your critical information instead of using plant-text in workflow yml file.
         2. Running Powershell Scripts needs to be enabled on the system. [Reference](https://www.partitionwizard.com/clone-disk/running-scripts-is-disabled-on-this-system.html)
-        3. If you set the runner/agent application as a service, please set the account to current user. You can use `whoami` command to check the current user.
+        3. If you set the runner/agent application as a service, please set the account to current user. This makes it easier to set up the environment. You can use `whoami` command to check the current user.  
   2. Install LabVIEW and its components needed with [NI Package Manger](https://www.ni.com/zh-cn/support/downloads/software-products/download.package-manager.html)
   3. Install [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
   4. Install dependent VIPM Libraries ([lvCICD.vipc](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)).
