@@ -41,7 +41,8 @@ Write-Host "PortNum = $PortNum"
 
 # Start LabVIEW Process to ensure TCP Port of VI Server is active.
 Write-Host "Start-Process -FilePath ""$LabVIEWExePath"""
-Start-Process -FilePath "$LabVIEWExePath"
+#Start-Process -FilePath "$LabVIEWExePath"
+& "$LabVIEWExePath"
 
 # Wait 10 second for LabVIEW Starting up
 Start-Sleep -Seconds 10
