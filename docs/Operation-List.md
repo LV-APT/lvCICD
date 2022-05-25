@@ -22,6 +22,8 @@
 
 ### `lvCopy` : Copy Files using LabVIEW VIs
 
+> When agent/runner is registered as windows service. `lvCopy` could not access the network drivers.
+
     Parameters:
         Parameter1. (required) Dest-Folder/Files of Copy operation
         Parameter2-10. (optional) Source Files of Copy operation
