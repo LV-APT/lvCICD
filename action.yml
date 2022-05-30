@@ -17,7 +17,7 @@ inputs:
   OperationVIFolder:
     description: "Path Contains the Operation VIs"
     required: false
-    default: ${{ github.action_path }}\LabVIEW-Adapter\
+    default: ""
   Operation:
     description: "The operation of lvCICD"
     required: false
