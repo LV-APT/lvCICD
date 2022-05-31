@@ -134,11 +134,13 @@ Add this customer-action to `steps` session in github actions yml file.
     - name: lvCICD-Tool-Version
       value: v0.3
     - name: lvCICD
-      value: '"$(lvCICD-Tool-LocalPath)\lvCICD.ps1" $(LabVIEW-Version) $(LabVIEW-Architecture)'
+      value: '"$(lvCICD-Tool-LocalPath)\lvCICD.ps1" $(LabVIEW-Version) $(LabVIEW-Architecture) "$(OperationVIFolder)"'
     - name: LabVIEW-Version
       value: '2019'
     - name: LabVIEW-Architecture
       value: x86
+    - name: OperationVIFolder
+    - value: ""
 
 #### Step 2: Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipeline yml file
 
