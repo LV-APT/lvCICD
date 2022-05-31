@@ -33,7 +33,7 @@ jobs:
 
       - name: TestEnvironment
         id: lvEcho
-        uses: LV-APT/lvCICD@add_script_in_customer_repo_feature
+        uses: LV-APT/lvCICD@main
         with:
           Operation: lvEcho
           Parameter1: "line1"

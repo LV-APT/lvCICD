@@ -15,7 +15,7 @@ You can use **`lvCICD`** to:
 4. *Install/uninstall VIPM libraries(vip)*
 5. *Apply VIPM VIPC file(vipc)*
 6. *Setup Large LabVIEW build facility*
-7. *Add your own operation, [Click link to see how to contribute to it](docs/How-to-contribute.md)*
+8. *Add your own operation, [Click link to see how to contribute to it](docs/How-to-contribute.md)*
 
 Check [**lvCICD Operation-List**](docs/Operation-List.md) for operations of `lvCICD`.
 
@@ -63,7 +63,7 @@ Check [**lvCICD Operation-List**](docs/Operation-List.md) for operations of `lvC
            2. Only use actions created by GitHub or verified creators in marketplace.
            3. Use github secret to store your critical information instead of using plant-text in workflow yml file.
         2. Running Powershell Scripts needs to be enabled on the system. [Reference](https://www.partitionwizard.com/clone-disk/running-scripts-is-disabled-on-this-system.html)
-        3. If you set the runner/agent application as a service, please set the account to current user. This makes it easier to set up the environment. You can use `whoami` command to check the current user.  
+        3. If you set the runner/agent application as a service, please set the account to current user. This makes it easier to set up the environment. You can use `whoami` command to check the current user.
   2. Install LabVIEW and its components needed with [NI Package Manger](https://www.ni.com/zh-cn/support/downloads/software-products/download.package-manager.html)
   3. Install [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
   4. Install dependent VIPM Libraries ([lvCICD.vipc](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)).
@@ -98,6 +98,7 @@ Add this customer-action to `steps` session in github actions yml file.
         Parameter10: [optional, parameter]
         LabVIEW_Version: [optional, LabVIEW_version,2019 or Later,2019 as default]
         Architecture: [optional, x86 or x64, x86 as default]
+        OperationVIFolder: [optional, use lvCICD action path as default, set to ${{ github.workspace }} for searching operations in your repo]
 
 **Example 1**: use `lvEcho` to check runner/agent ready for lvCICD tools.
 
