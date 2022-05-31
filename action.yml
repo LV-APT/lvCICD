@@ -11,9 +11,13 @@ inputs:
     required: false
     default: "2019"
   Architecture:
-    description: "32bit/64bit Verion of LabVIEW Used"
+    description: "32bit/64bit Version of LabVIEW Used"
     required: false
     default: "x86"
+  OperationVIFolder:
+    description: "Path Contains the Operation VIs"
+    required: false
+    default: ""
   Operation:
     description: "The operation of lvCICD"
     required: false
@@ -79,6 +83,7 @@ runs:
         ${{ github.action_path }}\lvCICD.ps1 `
         ${{ inputs.LabVIEW_Version }} `
         ${{ inputs.Architecture }} `
+        "${{ inputs.OperationVIFolder }}" `
         ${{ inputs.Operation }} `
         ${{ inputs.Parameter1 }} `
         ${{ inputs.Parameter2 }} `
