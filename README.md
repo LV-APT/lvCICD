@@ -140,7 +140,7 @@ Add this customer-action to `steps` session in github actions yml file.
     - name: LabVIEW-Architecture
       value: x86
     - name: OperationVIFolder
-    - value: ""
+      value: ""
 
 #### Step 2: Add task for Downloading lvCICD tools to `steps` session of Azure DevOps Pipeline yml file
 
