@@ -2,7 +2,7 @@ name: "lvCICD"
 author: "LV-APT"
 description: "CICD Action used for LabVIEW Users"
 branding:
-  icon: "tool"
+  icon: "anchor"
   color: "green"
 
 inputs:
