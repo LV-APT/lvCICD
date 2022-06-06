@@ -19,8 +19,6 @@ You can use **`lvCICD`** to:
 
 Check [**lvCICD Operation-List**](docs/Operation-List.md) for operations of `lvCICD`.
 
-### Latest Version : `lvCICD@v0.4`
-
 ### Dependence
 
 - [LabVIEW 2019 or Later](https://www.ni.com/zh-cn/support/downloads/software-products/download.labview.html)
