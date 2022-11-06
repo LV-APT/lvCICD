@@ -35,7 +35,7 @@ jobs:
       - id: vip-name
         run:
           $vipName=Split-Path -Path "C:\Test\Logs\abc.log" -Leaf;
-          Write-Host "::set-output name=vipName::"$vipName""
+          Write-Host "vipName="$vipName"" >> $GITHUB_OUTPUT
         shell: powershell
 
       - name: Upload a Build Artifact
