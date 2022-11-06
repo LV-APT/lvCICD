@@ -20,17 +20,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
       - name: Checkout
-        uses: actions/checkout@v2.4.2
+        uses: actions/checkout@v3
         with:
           repository: ${{ github.repository }}
           ref: main
-        
+
       - name: change remote origin url
         run: git remote set-url origin https://${{ secrets.AZDO_LVCICD_PAT_TOKEN }}@dev.azure.com/ni/GlobalSupport/_git/lvCICD
-        
+
       - name: Show Git remote
         run: git remote -v
-        
+
       - name: show Git branch
         run: git branch
 
@@ -39,11 +39,11 @@ jobs:
 
       - name: config Main user.name
         run: git config --global user.name "SyncWithAZDO.yml"
-        
+
       - name: allow shallowupdate
         run: git config receive.shallowupdate true
-        
-      - name: push fetch main from AZDO       
+
+      - name: push fetch main from AZDO
         run: git fetch origin
 
       - name: push main branch to AZDO
