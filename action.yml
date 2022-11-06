@@ -71,7 +71,7 @@ runs:
 
   steps:
     - name: "Checkout-lvCICD-Action"
-      uses: actions/checkout@v2.4.2
+      uses: actions/checkout@v3
 
     # - name: "Show working dir"
     #   run: pwd
