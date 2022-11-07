@@ -31,7 +31,6 @@
 		<Item Name="VITester" Type="Folder" URL="../VITester">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="VIAn Easy Analyze.vi" Type="VI" URL="../VIAnalyzer/VIAn Easy Analyze.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="1D Array to String__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/1D Array to String__ogtk.vi"/>
