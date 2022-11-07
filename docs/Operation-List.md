@@ -71,11 +71,20 @@ Requirements:
     Result:
         N/A
 
-### `vipm_BuildDailyVIP` : Build VIPM Library
+### `vipm_BuildVIPackage` : Build VIPM Library
 
     Parameters:
         Parameter1. (required) vipb File Path
-        Parameter2. (required) Install? : YES/NO
+        Parameter2. (optional) Version: x.x.x.x, or empty to use date of year.month.day.time
+        Parameter3. (optional) Install? : YES/NO, NO as default
+    Result:
+        Generated VIP file path
+
+### `vipm_BuildDailyVIP` : Build Daily VIPM Library, library's version stands for the built date
+
+    Parameters:
+        Parameter1. (required) vipb File Path
+        Parameter2. (option) Install? : YES/NO, NO as default
         Parameter3. (option) CopyDestPath : Path
     Result:
         Generated VIP file path

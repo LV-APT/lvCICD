@@ -24,6 +24,7 @@
 			<Item Name="StartVITester.vi" Type="VI" URL="../StartVITester.vi"/>
 			<Item Name="vipm_ApplyVIPCFile.vi" Type="VI" URL="../vipm_ApplyVIPCFile.vi"/>
 			<Item Name="vipm_BuildDailyVIP.vi" Type="VI" URL="../vipm_BuildDailyVIP.vi"/>
+			<Item Name="vipm_BuildVIPackage.vi" Type="VI" URL="../vipm_BuildVIPackage.vi"/>
 			<Item Name="vipm_InstallPackagesbyName.vi" Type="VI" URL="../vipm_InstallPackagesbyName.vi"/>
 			<Item Name="vipm_InstallPackagesbyPath.vi" Type="VI" URL="../vipm_InstallPackagesbyPath.vi"/>
 			<Item Name="vipm_InstallVIP.vi" Type="VI" URL="../vipm_InstallVIP.vi"/>
