@@ -102,6 +102,8 @@ Concepts
 
 ### `Batch_ListReposBranches` : list all the repos' current branch
 
+    *Not available in LabVIEW 2014,2015*
+
     Parameters:
         Parameter1. (required) Searching Folder
     Result:
@@ -109,12 +111,16 @@ Concepts
 
 ### `Batch_SyncReposToLatest` : Sync all repos to latest on the active branch in specified folder
 
+    *Not available in LabVIEW 2014,2015*
+
     Parameters:
         Parameter1. (required) Searching Folder
     Result:
         N/A
 
 ### `Batch_ListBuildSpecProjects` : list all the build spec projects with build order
+
+    *Not available in LabVIEW 2014,2015*
 
     Notes:
     Smaller **Build Index** means higher priority.
