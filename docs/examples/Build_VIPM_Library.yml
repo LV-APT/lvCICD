@@ -6,7 +6,9 @@ name: Build_VIPM_Library
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    #branches: [ main ]
+    tags:
+      - '*'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,14 +25,24 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: GetTag
+        id: tag
+        uses: dawidd6/action-get-tag@v1
+        with:
+          strip_v: true
+
+      - name: PrintTag
+        run: echo ${{steps.tag.outputs.tag}}
+
       # Runs a set of commands using the runners shell
       - name: BuildDailyVIP
         id: build-vip
-        uses: LV-APT/lvCICD@v0.3
+        uses: LV-APT/lvCICD@main
         with:
-          Operation: vipm_BuildDailyVIP
+          Operation: vipm_BuildVIPackage
           Parameter1: ${{ github.workspace }}\lvapt-Support-json.vipb
-          Parameter2: NO
+          Parameter2: ${{steps.tag.outputs.tag}}
+          Parameter3: NO
 
       - id: vip-name
         run:

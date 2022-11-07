@@ -22,13 +22,9 @@
 			<Item Name="lvCopy.vi" Type="VI" URL="../lvCopy.vi"/>
 			<Item Name="lvEcho.vi" Type="VI" URL="../lvEcho.vi"/>
 			<Item Name="StartVITester.vi" Type="VI" URL="../StartVITester.vi"/>
-			<Item Name="vipm_ApplyVIPCFile.vi" Type="VI" URL="../vipm_ApplyVIPCFile.vi"/>
-			<Item Name="vipm_BuildDailyVIP.vi" Type="VI" URL="../vipm_BuildDailyVIP.vi"/>
-			<Item Name="vipm_BuildVIPackage.vi" Type="VI" URL="../vipm_BuildVIPackage.vi"/>
-			<Item Name="vipm_InstallPackagesbyName.vi" Type="VI" URL="../vipm_InstallPackagesbyName.vi"/>
-			<Item Name="vipm_InstallPackagesbyPath.vi" Type="VI" URL="../vipm_InstallPackagesbyPath.vi"/>
-			<Item Name="vipm_InstallVIP.vi" Type="VI" URL="../vipm_InstallVIP.vi"/>
-			<Item Name="vipm_unInstallPackagesbyName.vi" Type="VI" URL="../vipm_unInstallPackagesbyName.vi"/>
+		</Item>
+		<Item Name="vipm" Type="Folder" URL="../vipm">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
