@@ -852,7 +852,7 @@
 			<Item Name="System" Type="VI" URL="System">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="VIAnUI Obtain CFG Password.vi" Type="VI" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2014/project/_VI Analyzer/analyzerui.llb/VIAnUI Obtain CFG Password.vi"/>
+			<Item Name="VIAnUI Obtain CFG Password.vi" Type="VI" URL="../../../../../../../../../Program Files (x86)/National Instruments/LabVIEW 2014/project/_VI Analyzer/analyzerui.llb/VIAnUI Obtain CFG Password.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
