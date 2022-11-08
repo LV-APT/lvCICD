@@ -18,9 +18,6 @@
 				<Property Name="NI.DISK" Type="Bool">true</Property>
 				<Property Name="NI.SortType" Type="Int">3</Property>
 			</Item>
-			<Item Name="lvBuild.vi" Type="VI" URL="../lvBuild.vi"/>
-			<Item Name="lvCopy.vi" Type="VI" URL="../lvCopy.vi"/>
-			<Item Name="lvEcho.vi" Type="VI" URL="../lvEcho.vi"/>
 		</Item>
 		<Item Name="VIAnalyzer" Type="Folder" URL="../VIAnalyzer">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
@@ -31,6 +28,9 @@
 		<Item Name="VITester" Type="Folder" URL="../VITester">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="lvBuild.vi" Type="VI" URL="../lvBuild.vi"/>
+		<Item Name="lvCopy.vi" Type="VI" URL="../lvCopy.vi"/>
+		<Item Name="lvEcho.vi" Type="VI" URL="../lvEcho.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="1D Array to String__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/1D Array to String__ogtk.vi"/>
