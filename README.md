@@ -10,7 +10,7 @@ This repo is used to complete the missing part of LabVIEW operations in Continuo
 You can use **`lvCICD`** to:
 
 1. *Build your LabVIEW project/LabVIEW FPGA bitfile*
-2. *[TODO] Start Vi Analyzer*
+2. *Start Vi Analyzer*
 3. *Run LabVIEW test cases*
 4. *Install/uninstall VIPM libraries(vip)*
 5. *Apply VIPM VIPC file(vipc)*
@@ -21,11 +21,11 @@ Check [**lvCICD Operation-List**](docs/Operation-List.md) for operations of `lvC
 
 ### Dependence
 
-- [LabVIEW 2017 or Later](https://www.ni.com/zh-cn/support/downloads/software-products/download.labview.html)
+- [LabVIEW 2014 or Later](https://www.ni.com/zh-cn/support/downloads/software-products/download.labview.html)
 - [LabVIEW Command line Interface](https://www.ni.com/zh-cn/support/downloads/software-products/download.ni-labview-command-line-interface.html#)
 - VIPM Libraries: [VIPM vipc file Download Link](https://github.com/LV-APT/lvCICD/files/8727600/lvCICD.zip)
   - [OpenG by OpenG](https://www.vipm.io/package/openg.org_lib_openg_toolkit/) (LabVIEW >= 2009)
-  - [Git API by Hampel Software Engineering](https://www.vipm.io/package/hse_lib_git_api/) (LabVIEW  >= 2016)
+  - [Git API by Hampel Software Engineering](https://www.vipm.io/package/hse_lib_git_api/) (LabVIEW  >= 2016) *Not available in LabVIEW 2014,2015*
   - [VIPM API by JKI](https://www.vipm.io/package/jki_lib_vipm_api/) (LabVIEW  >= 2013)
   - [JKI VI Tester by JKI](https://www.vipm.io/package/jki_labs_tool_vi_tester/) (LabVIEW  >= 2013)
 
@@ -134,7 +134,7 @@ Add this customer-action to `steps` session in github actions yml file.
     - name: lvCICD
       value: '"$(lvCICD-Tool-LocalPath)\lvCICD.ps1" $(LabVIEW-Version) $(LabVIEW-Architecture) "$(OperationVIFolder)"'
     - name: LabVIEW-Version
-      value: '2019'
+      value: '2017'
     - name: LabVIEW-Architecture
       value: x86
     - name: OperationVIFolder

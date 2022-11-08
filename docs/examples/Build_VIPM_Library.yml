@@ -6,7 +6,6 @@ name: Build_VIPM_Library
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,18 +23,20 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a set of commands using the runners shell
-      - name: BuildDailyVIP
+      - name: Build VI Package
         id: build-vip
-        uses: LV-APT/lvCICD@v0.3
+        uses: LV-APT/lvCICD@lv2014_support
         with:
-          Operation: vipm_BuildDailyVIP
-          Parameter1: ${{ github.workspace }}\lvapt-Support-json.vipb
-          Parameter2: NO
+          LabVIEW_Version: 2014
+          Operation: vipm_BuildVIPackage
+          Parameter1: ${{ github.workspace }}\src\LabVIEW-GlobalStop-Library.vipb
+          Parameter2: DAILYBUILD
+          Parameter3: NO
 
       - id: vip-name
         run:
-          $vipName=Split-Path -Path "C:\Test\Logs\abc.log" -Leaf;
-          Write-Host "vipName="$vipName"" >> $GITHUB_OUTPUT
+          $vipName=Split-Path -Path ${{ steps.build-vip.outputs.Result }} -Leaf;
+          Write-Host "::set-output name=vipName::"$vipName""
         shell: powershell
 
       - name: Upload a Build Artifact
