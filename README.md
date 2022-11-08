@@ -10,7 +10,7 @@ This repo is used to complete the missing part of LabVIEW operations in Continuo
 You can use **`lvCICD`** to:
 
 1. *Build your LabVIEW project/LabVIEW FPGA bitfile*
-2. *[TODO] Start Vi Analyzer*
+2. *Start Vi Analyzer*
 3. *Run LabVIEW test cases*
 4. *Install/uninstall VIPM libraries(vip)*
 5. *Apply VIPM VIPC file(vipc)*
