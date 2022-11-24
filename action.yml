@@ -79,7 +79,7 @@ runs:
 
     - name: "Run-lvCICD-Scripts"
       id: lvCICDScript
-      run:
+      run: |
         ${{ github.action_path }}\lvCICD.ps1 `
         ${{ inputs.LabVIEW_Version }} `
         ${{ inputs.Architecture }} `
@@ -96,5 +96,5 @@ runs:
         ${{ inputs.Parameter9 }} `
         ${{ inputs.Parameter10 }};
         $Result=Get-Content -Path "${{ github.action_path }}\output.txt";
-        Write-Host "::set-output name=Result::$Result"
+        echo "Result=$Result" >> $GITHUB_OUTPUT
       shell: powershell
