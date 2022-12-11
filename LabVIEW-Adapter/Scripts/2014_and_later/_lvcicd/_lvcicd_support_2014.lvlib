@@ -16,4 +16,5 @@
 	<Item Name="Strip apostrophe.vi" Type="VI" URL="../Strip apostrophe.vi"/>
 	<Item Name="Autosize All MultiListbox Columns (Uniform Text)_lvcicd.vi" Type="VI" URL="../Autosize All MultiListbox Columns (Uniform Text)_lvcicd.vi"/>
 	<Item Name="BatchProcessWindow_lvcicd.vi" Type="VI" URL="../BatchProcessWindow_lvcicd.vi"/>
+	<Item Name="First Matched Config File_lvcicd.vi" Type="VI" URL="../First Matched Config File_lvcicd.vi"/>
 </Library>
