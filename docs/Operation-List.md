@@ -47,27 +47,38 @@ Requirements:
 
 - VIPM API is function of PRO Edition of VIPM. You need activate the license, or use a 30-days free-trial license.
 
-### `vipm_InstallPackagesByPath` : install vip file
+### `vipm_OpenVIPM`: Open VIPM
 
     Parameters:
-        1. All Parameters accept a vip file path
-           1. For regular file path, the full file path will be used.
-           2. If the path not end with '.vip', recursively search will be executed the path with last part of path as pattern.
-           3. If the last part of path contains '*', recursively search will be executed the path with last part of path as pattern.
+        N/A
     Result:
         N/A
 
-### `vipm_InstallPackagesByName` : install vip by Package Name
+### `vipm_ExitVIPM`: Exit VPM
+
+    Parameters:
+        N/A
+    Result:
+        N/A
+
+### `vipm_SyncVIPMPackageLibrary`: Sync VIPM package over network
+
+    Parameters:
+        N/A
+    Result:
+        N/A
+
+### `vipm_InstallPackages` : install vip by Package Name
+
+    Parameters:
+        1. All Parameters accept a package name/package+version/vipFilePath. The latest version will be used if only package name applied.
+    Result:
+        N/A
+
+### `vipm_unInstallPackages` : install vip by Package Name
 
     Parameters:
         1. All Parameters accept a package name, the latest version will be used.
-    Result:
-        N/A
-
-### `vipm_unInstallPackagesByName` : unInstall vip by Package Name
-
-    Parameters:
-        1. All Parameters accept a package name, the latest version of installed will be used.
     Result:
         N/A
 
