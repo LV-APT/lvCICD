@@ -75,6 +75,5 @@ LabVIEWCLI -OperationName RunVI `
 
 $outputVFile="$lvCICD_Tool_dir\output.txt"
 Write-Host "lvCICD output is saved to ""$outputVFile"""
-$Result=Get-Content -Path "$outputVFile"
-Write-Host "Result=$Result"
-Write-Host "Result=$Result" >> $GITHUB_OUTPUT
+$Result=Get-Content -Path "$outputVFile";
+Write-Host "Result=$Result";
