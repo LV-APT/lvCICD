@@ -52,7 +52,7 @@ Start-Sleep -Seconds 10
 
 $lvCICDVIPath = "$lvCICD_Tool_dir\LabVIEW-Adapter\lvCICD.vi"
 
-Write-Host "LabVIEWCLI -OperationName RunVI -VIPath ""$lvCICDVIPath"" -LogFilePath ""$lvCICD_Tool_dir\lVCLI.log"" -LogToConsole True -LabVIEWPath ""$LabVIEWExePath"" -PortNumber $PortNum ""$OperationVIPath"" $Operation $Parameter1 $Parameter2 $Parameter3 $Parameter4 $Parameter5"
+Write-Host "LabVIEWCLI -OperationName RunVI -VIPath ""$lvCICDVIPath"" -LogFilePath ""$lvCICD_Tool_dir\lVCLI.log"" -LogToConsole True -LabVIEWPath ""$LabVIEWExePath"" -PortNumber $PortNum ""$OperationVIPath"" $Operation $Parameter1 $Parameter2 $Parameter3 $Parameter4 $Parameter5 $Parameter6 $Parameter7 $Parameter8 $Parameter9 $Parameter10"
 
 LabVIEWCLI -OperationName RunVI `
     -VIPath "$lvCICDVIPath" `
