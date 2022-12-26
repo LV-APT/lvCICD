@@ -14,17 +14,17 @@ if($OperationVIPath){} else {$OperationVIPath = "$lvCICD_Tool_dir"}
 
 $LabVIEWExePath = & "$lvCICD_Tool_dir\scripts\LabVIEW_exe_path.ps1" $LabVIEW_Version $Architecture;
 $PortNum = & "$lvCICD_Tool_dir\scripts\ViServerPort.ps1" $LabVIEW_Version;
-$Operation = $args[3]; if($Operation){} else {$Operation = 'lvEcho'}
-$Parameter1 = $args[4]; if ( $Parameter1 ) { $Parameter1 = "'$Parameter1'" }
-$Parameter2 = $args[5]; if ( $Parameter2 ) { $Parameter2 = "'$Parameter2'" }
-$Parameter3 = $args[6]; if ( $Parameter3 ) { $Parameter3 = "'$Parameter3'" }
-$Parameter4 = $args[7]; if ( $Parameter4 ) { $Parameter4 = "'$Parameter4'" }
-$Parameter5 = $args[8]; if ( $Parameter5 ) { $Parameter5 = "'$Parameter5'" }
-$Parameter6 = $args[9]; if ( $Parameter6 ) { $Parameter6 = "'$Parameter6'" }
-$Parameter7 = $args[10]; if ( $Parameter7 ) { $Parameter7 = "'$Parameter7'" }
-$Parameter8 = $args[11]; if ( $Parameter8 ) { $Parameter8 = "'$Parameter8'" }
-$Parameter9 = $args[12]; if ( $Parameter9 ) { $Parameter9 = "'$Parameter9'" }
-$Parameter10 = $args[13]; if ( $Parameter10 ) { $Parameter10 = "'$Parameter10'" }
+$Operation = $args[3]; #if($Operation){} else {$Operation = 'lvEcho'}
+$Parameter1 = $args[4]; #if ( $Parameter1 ) { $Parameter1 = "'$Parameter1'" }
+$Parameter2 = $args[5]; #if ( $Parameter2 ) { $Parameter2 = "'$Parameter2'" }
+$Parameter3 = $args[6]; #if ( $Parameter3 ) { $Parameter3 = "'$Parameter3'" }
+$Parameter4 = $args[7]; #if ( $Parameter4 ) { $Parameter4 = "'$Parameter4'" }
+$Parameter5 = $args[8]; #if ( $Parameter5 ) { $Parameter5 = "'$Parameter5'" }
+$Parameter6 = $args[9]; #if ( $Parameter6 ) { $Parameter6 = "'$Parameter6'" }
+$Parameter7 = $args[10]; #if ( $Parameter7 ) { $Parameter7 = "'$Parameter7'" }
+$Parameter8 = $args[11]; #if ( $Parameter8 ) { $Parameter8 = "'$Parameter8'" }
+$Parameter9 = $args[12]; #if ( $Parameter9 ) { $Parameter9 = "'$Parameter9'" }
+$Parameter10 = $args[13]; #if ( $Parameter10 ) { $Parameter10 = "'$Parameter10'" }
 
 Write-Host "LabVIEW_Version = $LabVIEW_Version"
 Write-Host "Architecture = $Architecture"
