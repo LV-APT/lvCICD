@@ -14,7 +14,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: CloneRepo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.1.1
 
       - id: step1
         run: echo "test=hello" >> $GITHUB_OUTPUT
@@ -33,7 +33,7 @@ jobs:
 
       - name: TestEnvironment
         id: lvEcho
-        uses: LV-APT/lvCICD@main
+        uses: NEVSTOP-LAB/lvCICD@main
         with:
           Operation: lvEcho
           Parameter1: "line1"

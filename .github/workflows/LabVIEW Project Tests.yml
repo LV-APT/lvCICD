@@ -14,14 +14,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: CloneRepo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.1.1
 
       - name: echo GITHUB_WORKSPACE
         run: echo ${{ github.workspace }}
         shell: powershell
 
       - name: Run lvCICD Test cases with VITester
-        uses: LV-APT/lvCICD@main
+        uses: NEVSTOP-LAB/lvCICD@main
         with:
           Operation: StartVITester
           Parameter1: ${{ github.workspace }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj

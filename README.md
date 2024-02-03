@@ -1,7 +1,7 @@
 # Customer Action for LabVIEW CI/CD (lvCICD)
 
-[![Sync With AZDO](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml)
-[![LabVIEW Project Tests](https://github.com/LV-APT/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml)
+<!-- [![Sync With AZDO](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml) -->
+[![LabVIEW Project Tests](https://github.com/NEVSTOP-LAB/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml/badge.svg)](https://github.com/NEVSTOP-LAB/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml)
 
 ## Introduction
 
@@ -15,7 +15,7 @@ You can use **`lvCICD`** to:
 4. *Install/uninstall VIPM libraries(vip)*
 5. *Apply VIPM VIPC file(vipc)*
 6. *Setup Large LabVIEW build facility*
-8. *Add your own operation, [Click link to see how to contribute to it](docs/How-to-contribute.md)*
+7. *Add your own operation, [Click link to see how to contribute to it](docs/How-to-contribute.md)*
 
 Check [**lvCICD Operation-List**](docs/Operation-List.md) for operations of `lvCICD`.
 
