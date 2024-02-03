@@ -1,5 +1,5 @@
 name: "lvCICD"
-author: "LV-APT"
+author: "NEVSTOP-LAB"
 description: "CICD Action used for LabVIEW Users"
 branding:
   icon: "anchor"
@@ -71,7 +71,7 @@ runs:
 
   steps:
     - name: "Checkout-lvCICD-Action"
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4.1.1
 
     # - name: "Show working dir"
     #   run: pwd
