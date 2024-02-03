@@ -1,7 +1,7 @@
 # Customer Action for LabVIEW CI/CD (lvCICD)
 
 <!-- [![Sync With AZDO](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/Sync%20With%20AZDO.yml) -->
-[![LabVIEW Project Tests](https://github.com/NEVSTOP-LAB/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml/badge.svg)](https://github.com/LV-APT/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml)
+[![LabVIEW Project Tests](https://github.com/NEVSTOP-LAB/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml/badge.svg)](https://github.com/NEVSTOP-LAB/lvCICD/actions/workflows/LabVIEW%20Project%20Tests.yml)
 
 ## Introduction
 
