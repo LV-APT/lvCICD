@@ -9,7 +9,7 @@ inputs:
   LabVIEW_Version:
     description: "LabVIEW Version Used"
     required: false
-    default: "2019"
+    default: "2020"
   Architecture:
     description: "32bit/64bit Version of LabVIEW Used"
     required: false
