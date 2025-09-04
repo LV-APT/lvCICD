@@ -36,7 +36,7 @@ jobs:
       - id: vip-name
         run:
           $vipName=Split-Path -Path ${{ steps.build-vip.outputs.Result }} -Leaf;
-          Write-Host "::set-output name=vipName::"$vipName""
+          echo "vipName=$vipName" >> $env:GITHUB_OUTPUT
         shell: powershell
 
       - name: Upload a Build Artifact
