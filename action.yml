@@ -106,5 +106,5 @@ runs:
         $Parameter9 `
         $Parameter10 ;
         $Result=Get-Content -Path "${{ github.action_path }}\output.txt";
-        Write-Host "::set-output name=Result::$Result"
+        echo "Result=$Result" >> $env:GITHUB_OUTPUT
       shell: powershell
