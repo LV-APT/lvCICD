@@ -23,5 +23,6 @@ jobs:
       - name: Run lvCICD Test cases with VITester
         uses: NEVSTOP-LAB/lvCICD@main
         with:
+          LabVIEW_Version: 2017
           Operation: StartVITester
           Parameter1: ${{ github.workspace }}\LabVIEW-Adapter\CICD-LabVIEW-Adapter.lvproj
